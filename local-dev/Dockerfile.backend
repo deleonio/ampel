@@ -1,0 +1,25 @@
+# Baut alle Backend-Module (inkl. Protobuf-Generierung) und erzeugt pro Service ein Runtime-Image.
+FROM maven:3.9-eclipse-temurin-25 AS build
+ARG PROTOC_VERSION=36.2
+ARG TARGETARCH
+RUN apt-get update && apt-get install -y --no-install-recommends unzip curl && rm -rf /var/lib/apt/lists/* \
+ && case "$TARGETARCH" in arm64) A=aarch_64;; *) A=x86_64;; esac \
+ && curl -fsSL -o /tmp/protoc.zip "https://github.com/protocolbuffers/protobuf/releases/download/v${PROTOC_VERSION}/protoc-${PROTOC_VERSION}-linux-${A}.zip" \
+ && unzip -q /tmp/protoc.zip -d /usr/local && rm /tmp/protoc.zip && protoc --version
+WORKDIR /src
+COPY pom.xml ./
+COPY messaging-sdk ./messaging-sdk
+COPY metainformation-service ./metainformation-service
+COPY notification-service ./notification-service
+COPY scoring-service ./scoring-service
+RUN bash messaging-sdk/proto/helper.sh build-for-java
+RUN --mount=type=cache,target=/root/.m2 mvn -B -q -DskipTests package
+
+FROM eclipse-temurin:25-jdk-alpine AS runtime
+ARG SERVICE
+RUN apk add --no-cache curl
+WORKDIR /opt/app
+COPY --from=build /src/${SERVICE}/target/*.jar ./app.jar
+ENV SERVER_PORT=8080
+HEALTHCHECK --interval=5s --start-period=20s CMD curl -s -f http://localhost:${SERVER_PORT}/actuator/health || exit 1
+ENTRYPOINT ["java", "-jar", "/opt/app/app.jar"]

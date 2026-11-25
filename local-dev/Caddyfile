@@ -1,0 +1,12 @@
+# Bündelt die Service-APIs unter einer BASE_API_URL für die UI.
+:8080 {
+	@meta path_regexp ^/medicalcases/[^/]+/metainformation(/.*)?$
+	handle @meta {
+		reverse_proxy metainformation-service:8080
+	}
+	@scores path_regexp ^/medicalcases/[^/]+/scores(/.*)?$
+	handle @scores {
+		reverse_proxy scoring-service:8080
+	}
+	respond "not found" 404
+}
