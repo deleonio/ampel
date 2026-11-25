@@ -29,7 +29,8 @@
     "demo-build:web": "cross-env VITE_TEST_DATA_VIEW=demo react-router build",
     "demo-build": "npm run demo-build:web && node scripts/build-desktop-package.mjs",
     "desktop:dev": "concurrently -k \"cross-env VITE_TEST_DATA_VIEW=demo react-router dev --host 127.0.0.1 --port 5173\" \"wait-on tcp:5173 && cross-env ELECTRON_RENDERER_URL=http://localhost:5173 electron .\"",
-    "desktop:build": "npm run demo-build"
+    "desktop:build": "npm run demo-build",
+    "a11y": "npm run build && node a11y/axe.mjs"
   },
   "lint-staged": {
     "*.{js,ts,jsx,tsx}": [
@@ -82,6 +83,7 @@
     "zod": "4.1.13"
   },
   "devDependencies": {
+    "@axe-core/playwright": "4.14.1",
     "@react-router/dev": "^7.10.1",
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.9.1",
@@ -108,6 +110,7 @@
     "jiti": "^2.6.1",
     "jsdom": "^27.3.0",
     "lint-staged": "^16.2.7",
+    "playwright": "1.65.1",
     "postcss": "^8.5.6",
     "prettier": "^3.7.4",
     "prettier-plugin-tailwindcss": "^0.7.2",

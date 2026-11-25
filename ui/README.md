@@ -272,6 +272,17 @@ Faker is seeded deterministically in tests to ensure reproducible results.
 
 Tests are automatically run in the CI pipeline (GitHub Actions) on every push to the main branch and for pull requests and in every commit to avoid broken builds on the main branch.
 
+### Accessibility (axe)
+
+```sh
+npx playwright install chromium   # once, or use A11Y_BROWSER_CHANNEL=chrome
+npm run a11y
+```
+
+Builds the app, starts it against a mock backend (`a11y/mock-backend.mjs`) and checks every view and state in a real browser with axe (WCAG 2.2 AA and best practices): overview, expanded section, detail drawer with table and chart, phone width, loading state and all HTTP error pages. In addition, the script checks that each page has exactly one level-1 heading, that the browser title names the page, that opening the drawer focuses the chart switch and that Escape closes it and returns focus. The JSON report is written to `a11y/results/axe-report.json`; the command exits non-zero on any finding.
+
+The unit tests replace the KoliBri components with light-DOM stubs (`app/tests/kolibriMock.tsx`), so real accessibility is only covered by `npm run a11y`.
+
 ### 🧹 Code-Qualität & Formatierung
 
 This project uses the following tools to ensure consistent and clean code:
