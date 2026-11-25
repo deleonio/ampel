@@ -109,7 +109,7 @@ describe('PatientMetaDataHeader', () => {
 
     const productLogo = screen.getByAltText('Header Logo');
     const clinicLogo = screen.getByAltText('Clinical Logo');
-    const logoRow = productLogo.parentElement;
+    const logoRow = productLogo.closest('.col-span-2');
 
     expect(productLogo).toHaveAttribute('src', '/runtime-assets/missing-brand-default-logo.svg');
     expect(clinicLogo).toHaveAttribute('src', '/runtime-assets/missing-clinic-logo.svg');
@@ -146,7 +146,31 @@ describe('PatientMetaDataHeader', () => {
     const productLogo = screen.getByAltText('Header Logo');
 
     expect(container.firstElementChild?.className).toContain('pr-4');
-    expect(productLogo.parentElement?.className).toContain('col-span-2');
-    expect(productLogo.parentElement?.className).toContain('justify-end');
+    expect(productLogo.closest('.col-span-2')?.className).toContain('justify-end');
+  });
+
+  it('gives every header icon an accessible label', () => {
+    render(
+      <PatientMetaDataHeader
+        firstname='Max'
+        lastname='Mustermann'
+        patientId='P-1'
+        medicalCaseId='CASE-1'
+        sex='männlich'
+        dateOfBirth='1990-01-01T00:00:00Z'
+        headerConfig={{
+          productLogoUrl: '',
+          clinicLogoUrl: '',
+          ticketLink: '',
+          contactPhone: '0341 123',
+          mtNumber: 'MT-42',
+          instructionsLink: '',
+        }}
+      />,
+    );
+
+    for (const label of ['E-Mail', 'Dokument', 'Telefon', 'Gerätekennung']) {
+      expect(screen.getByLabelText(label)).toBeInTheDocument();
+    }
   });
 });

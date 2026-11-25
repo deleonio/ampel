@@ -1,30 +1,21 @@
+import { KolBadge } from '@public-ui/react-v19';
 import type { ReactElement } from 'react';
 
 import { AlertType } from '../../types/types';
-import { AlertPing } from './AlertPing';
+import { badgeForAlertType } from '../utils/status';
 
 interface AlertHeaderProps {
-  name: string;
   type: AlertType;
   severity?: string | null | undefined;
 }
 
-/**
- * A header component that displays an alert name with an associated visual indicator.
- *
- * @param {{ name: string; type: AlertType }} props
- * @prop {string} name - The name of the alert to be displayed.
- * @prop {AlertType} type - The type of the alert, used to determine the visual indicator.
- * @returns {React.ReactNode } The rendered alert header component.
- */
-export function AlertHeader({ name, type, severity }: AlertHeaderProps): ReactElement {
+export function AlertHeader({ type, severity }: AlertHeaderProps): ReactElement {
+  const badge = badgeForAlertType(type);
+
   return (
-    <div className='flex flex-row items-center gap-x-4'>
-      <AlertPing type={type} />
-      <span className='text-xl font-medium text-violet-800'>
-        {name}
-        {severity && ' - ' + severity}
-      </span>
+    <div className='flex flex-row flex-wrap items-center gap-x-4 gap-y-2'>
+      <KolBadge _label={badge.label} _color={badge.color} />
+      {severity && <span className='text-lg font-medium'>{severity}</span>}
     </div>
   );
 }

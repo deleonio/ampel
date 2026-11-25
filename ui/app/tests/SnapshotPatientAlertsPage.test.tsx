@@ -1,4 +1,4 @@
-import { act, render, screen, waitFor } from '@testing-library/react';
+import { act, fireEvent, render, screen, within } from '@testing-library/react';
 import { beforeAll, beforeEach, afterAll, describe, expect, it, vi } from 'vitest';
 import { Suspense } from 'react';
 
@@ -36,6 +36,11 @@ vi.mock('react-router', async () => {
 const { default: PatientAlertsPageController } =
   await import('../pages/alerts/PatientAlertsPageController');
 
+async function openDetails(cardTestId: string): Promise<void> {
+  const card = (await screen.findAllByTestId(cardTestId))[0];
+  fireEvent.click(within(card).getByRole('button', { name: /Details zu .* anzeigen/ }));
+}
+
 describe('PatientAlertsPage Integration', () => {
   beforeEach(async () => {
     await act(async () => {
@@ -61,70 +66,45 @@ describe('PatientAlertsPage Integration', () => {
   });
 
   it('opens & closes the detail view of critical alerts (snapshots)', async () => {
-    const btn = (await screen.findAllByTestId('critical-alert-card'))[0];
-    await btn.click();
+    await openDetails('critical-alert-card');
 
-    const close = await screen.findByTestId('overlay-back-navigation');
-    await waitFor(() =>
-      expect(screen.getByTestId('alert-detail-overlay-panel')).toHaveAttribute(
-        'aria-hidden',
-        'false',
-      ),
-    );
-    expect(close).toBeInTheDocument();
+    const dialog = await screen.findByRole('dialog');
+    expect(dialog).toHaveAttribute('data-testid', 'alert-detail-overlay-panel');
 
     expect(document.body).toMatchSnapshot('alert-overlay-open');
 
-    const switcher = await screen.findByTestId('switcher');
-    await switcher.click();
+    fireEvent.click(await screen.findByRole('switch'));
 
     expect(document.body).toMatchSnapshot('alert-overlay-open-diagramm');
 
-    await close.click();
+    fireEvent.click(screen.getByRole('button', { name: 'Schließen' }));
 
     expect(document.body).toMatchSnapshot('alert-overlay-closed');
   });
 
   it('opens & closes the detail view of warning alerts (snapshots)', async () => {
-    const btn = (await screen.findAllByTestId('warning-alert-card'))[0];
-    await btn.click();
+    await openDetails('warning-alert-card');
 
-    const close = await screen.findByTestId('overlay-back-navigation');
-    await waitFor(() =>
-      expect(screen.getByTestId('alert-detail-overlay-panel')).toHaveAttribute(
-        'aria-hidden',
-        'false',
-      ),
-    );
-    expect(close).toBeInTheDocument();
+    const dialog = await screen.findByRole('dialog');
+    expect(dialog).toHaveAttribute('data-testid', 'alert-detail-overlay-panel');
 
     expect(document.body).toMatchSnapshot('warning-overlay-open');
 
-    const switcher = await screen.findByTestId('switcher');
-    await switcher.click();
+    fireEvent.click(await screen.findByRole('switch'));
 
     expect(document.body).toMatchSnapshot('warning-overlay-open-diagramm');
 
-    await close.click();
+    fireEvent.click(screen.getByRole('button', { name: 'Schließen' }));
 
     expect(document.body).toMatchSnapshot('warning-overlay-closed');
   });
 
   it('keeps the detail overlay hidden after closing it', async () => {
-    const btn = (await screen.findAllByTestId('critical-alert-card'))[0];
-    await btn.click();
+    await openDetails('critical-alert-card');
+    expect(await screen.findByRole('dialog')).toBeInTheDocument();
 
-    const overlay = await screen.findByTestId('alert-detail-overlay-panel');
-    await waitFor(() => {
-      expect(overlay).toHaveAttribute('aria-hidden', 'false');
-      expect(overlay.className).toContain('translate-x-0');
-    });
+    fireEvent.click(screen.getByRole('button', { name: 'Schließen' }));
 
-    const close = await screen.findByTestId('overlay-back-navigation');
-    await close.click();
-
-    expect(overlay).toHaveAttribute('aria-hidden', 'true');
-    expect(overlay.className).toContain('translate-x-full');
-    expect(overlay.className).toContain('invisible');
+    expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
   });
 });

@@ -11,15 +11,15 @@ const baseAlert: AlertDetails = {
   message: 'Hinweis',
   resultTime: new Date('2024-01-01T00:00:00Z'),
   rulesetHistory: { data: [] },
-  links: [],
 };
 
 describe('AlertDetailOverlay', () => {
   it('renders safely when history is empty', () => {
-    render(<AlertDetailOverlay data={baseAlert} onClose={() => {}} />);
+    render(<AlertDetailOverlay data={baseAlert} />);
 
-    expect(screen.getByText(/Probe Alert/)).toBeInTheDocument();
-    expect(screen.getByText(/Keine Messwerte vorhanden/i)).toBeInTheDocument();
+    expect(screen.getByText('Warnung')).toBeInTheDocument();
+    expect(screen.getByRole('table', { name: 'Messwerte im Verlauf' })).toBeInTheDocument();
+    expect(screen.queryAllByRole('row')).toHaveLength(1);
   });
 
   it('prefers the latest severity from history', () => {
@@ -47,7 +47,7 @@ describe('AlertDetailOverlay', () => {
       },
     };
 
-    render(<AlertDetailOverlay data={data} onClose={() => {}} />);
+    render(<AlertDetailOverlay data={data} />);
 
     expect(screen.getByText(/neu/)).toBeInTheDocument();
   });

@@ -1,3 +1,4 @@
+import { KolAlert } from '@public-ui/react-v19';
 import type { ReactElement } from 'react';
 
 interface HintMessageProps {
@@ -44,8 +45,8 @@ export function HintMessage({ message }: HintMessageProps): ReactElement | null 
   if (!sanitized) return null;
 
   return (
-    <div className='rounded-xl bg-gray-100 p-1'>
-      <div className='text-m font-bold' dangerouslySetInnerHTML={{ __html: sanitized }} />
-    </div>
+    <KolAlert _type='info' _label='Hinweis' _level={3} _variant='card'>
+      <div dangerouslySetInnerHTML={{ __html: sanitized }} />
+    </KolAlert>
   );
 }

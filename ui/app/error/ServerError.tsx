@@ -1,8 +1,8 @@
+import { KolHeading } from '@public-ui/react-v19';
 import { ReactNode } from 'react';
 
 import { Countdown } from './Countdown';
 import { ErrorLayout } from './ErrorLayout';
-import { errorHeadingStyle } from './errorStyles';
 
 interface CountdownProps {
   retryAfterMs?: number | null;
@@ -22,7 +22,7 @@ export function ServerError({
     <ErrorLayout>
       <title>AMPEL-CDSS</title>
       <meta charSet='utf-8' />
-      <h1 style={errorHeadingStyle}>System nicht erreichbar</h1>
+      <KolHeading _label='System nicht erreichbar' _level={1} />
       <p style={{ maxWidth: '600px', width: 'fit-content', margin: 'auto' }}>
         Die AMPEL ist aktuell nicht erreichbar. In{' '}
         <Countdown retryAfterMs={retryAfterMs} id={id} updateMs={updateMs} log={log} /> Sekunden

@@ -62,13 +62,7 @@ export function AlertHistory({ history }: AlertHistoryProps): ReactElement {
         </div>
       </div>
       {hasMoreThanOneDataPoint && (
-        <Switcher
-          label={enabledChart ? 'Als Tabelle anzeigen' : 'Als Diagramm anzeigen'}
-          onChange={(newState) => {
-            setEnabledChart(newState);
-          }}
-          initialState={enabledChart}
-        />
+        <Switcher label='Als Diagramm anzeigen' checked={enabledChart} onChange={setEnabledChart} />
       )}
     </>
   );

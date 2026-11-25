@@ -1,8 +1,8 @@
+import { KolHeading } from '@public-ui/react-v19';
 import React from 'react';
 
 import { Countdown } from './Countdown';
 import { ErrorLayout } from './ErrorLayout';
-import { errorHeadingStyle } from './errorStyles';
 
 interface CountdownProps {
   retryAfterMs?: number | null;
@@ -22,7 +22,7 @@ export function TooManyRequests({
     <ErrorLayout>
       <title>AMPEL-CDSS</title>
       <meta charSet='utf-8' />
-      <h1 style={errorHeadingStyle}>Zu viele Anfragen in kurzer Zeit</h1>
+      <KolHeading _label='Zu viele Anfragen in kurzer Zeit' _level={1} />
       <p style={{ maxWidth: '600px', width: 'fit-content', margin: 'auto' }}>
         Bitte warten sie{' '}
         <Countdown retryAfterMs={retryAfterMs} id={id} updateMs={updateMs} log={log} /> Sekunden bis

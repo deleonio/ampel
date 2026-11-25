@@ -1,4 +1,5 @@
 /* eslint-disable import/no-default-export */
+import { KolBadge } from '@public-ui/react-v19';
 import React, { ReactNode, Suspense, useMemo } from 'react';
 import {
   Await,
@@ -27,6 +28,7 @@ import type { ApiResultCollection, MedicalCaseMetadataApiResult } from './types/
 const isTest = import.meta.env?.VITE_TEST_DATA_VIEW === 'test';
 const isDemo = import.meta.env?.VITE_TEST_DATA_VIEW === 'demo';
 const isDev = import.meta.env?.MODE === 'development';
+const ENV_BADGE_COLOR = { backgroundColor: '#fde047', foregroundColor: '#422006' };
 
 type AlertsResultValue = ApiResultCollection | SerializableStatusError;
 type MetadataResultValue = MedicalCaseMetadataApiResult | SerializableStatusError;
@@ -294,19 +296,11 @@ export default function PatientAlertsPageController(): React.ReactNode {
 
   return (
     <div className='h-full'>
-      {isTest && (
-        <div className='mb-2 inline-block rounded bg-yellow-300 px-2 py-1 text-xs font-semibold text-yellow-900'>
-          TEST
-        </div>
-      )}
-      {isDemo && (
-        <div className='mb-2 inline-block rounded bg-yellow-300 px-2 py-1 text-xs font-semibold text-yellow-900'>
-          DEMO 03.11.2025
-        </div>
-      )}
-      {isDev && (
-        <div className='mb-2 inline-block rounded bg-yellow-300 px-2 py-1 text-xs font-semibold text-yellow-900'>
-          DEV
+      {(isTest || isDemo || isDev) && (
+        <div className='mb-2 flex flex-wrap items-start gap-2'>
+          {isTest && <KolBadge _label='TEST' _color={ENV_BADGE_COLOR} />}
+          {isDemo && <KolBadge _label='DEMO 03.11.2025' _color={ENV_BADGE_COLOR} />}
+          {isDev && <KolBadge _label='DEV' _color={ENV_BADGE_COLOR} />}
         </div>
       )}
       {hasAsyncData ? (

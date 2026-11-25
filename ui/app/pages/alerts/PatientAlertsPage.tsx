@@ -1,3 +1,4 @@
+import { KolDetails, KolDrawer, KolHeading } from '@public-ui/react-v19';
 import React, { ReactNode, useState } from 'react';
 
 import { type PatientHeaderConfig } from '../../patientHeaderConfig';
@@ -19,24 +20,12 @@ export function PatientAlertsPage({
   headerConfig,
 }: PatientAlertsPageProps): React.ReactNode {
   const [detailOverlayData, setDetailOverlayData] = useState<AlertDetails | null>(null);
-  const [isDetailOverlayVisible, setIsDetailOverlayVisible] = useState(false);
-  const [inconspicuousStatesVisible, setInconspicuousStatesVisible] = useState(false);
 
   const displayDetailOverlay = (details: AlertDetails): void => {
     setDetailOverlayData(details);
-    openDetailOverlay();
   };
 
   const hideDetailOverlay = (): void => {
-    setIsDetailOverlayVisible(false);
-  };
-
-  const openDetailOverlay = (): void => {
-    setIsDetailOverlayVisible(true);
-  };
-
-  const handleDetailOverlayTransitionEnd = (event: React.TransitionEvent<HTMLDivElement>): void => {
-    if (event.target !== event.currentTarget || isDetailOverlayVisible) return;
     setDetailOverlayData(null);
   };
 
@@ -89,110 +78,55 @@ export function PatientAlertsPage({
           />
         )}
 
-        <div className='relative flex h-full w-full flex-col overflow-x-hidden'>
+        <KolDrawer
+          _label={detailOverlayData?.ruleset ?? 'Details'}
+          _level={2}
+          _align='right'
+          _hasCloser
+          _open={Boolean(detailOverlayData)}
+          _on={{ onClose: hideDetailOverlay, onCancel: hideDetailOverlay }}
+          data-testid='alert-detail-overlay-panel'
+        >
           {detailOverlayData && (
-            <div
-              className={`absolute inset-y-0 left-0 z-50 h-full w-full bg-white transition-[transform,opacity,visibility] duration-300 ease-in-out ${
-                isDetailOverlayVisible
-                  ? 'visible translate-x-0 animate-alert-detail-overlay-open opacity-100'
-                  : 'pointer-events-none invisible translate-x-full opacity-0'
-              }`}
-              onTransitionEnd={handleDetailOverlayTransitionEnd}
-              aria-hidden={!isDetailOverlayVisible}
-              data-testid='alert-detail-overlay-panel'
-            >
-              <AlertDetailOverlay
-                data={detailOverlayData}
-                onClose={hideDetailOverlay}
-                key={detailOverlayData.ruleset}
-              />
-            </div>
+            <AlertDetailOverlay data={detailOverlayData} key={detailOverlayData.ruleset} />
           )}
+        </KolDrawer>
 
-          <div className='ml-2 flex h-full w-full flex-col gap-y-20 pr-4'>
-            <div className='grid grid-cols-1 gap-12 lg:auto-rows-min lg:grid-cols-2'>
-              <div className='order-1 flex w-full flex-col items-start gap-y-4 lg:col-span-1'>
-                <div className='flex flex-row items-baseline gap-x-4'>
-                  <span className='text-lg text-gray-600'>Kritische Zustände</span>
-                  <span className='rounded-md bg-rose-100 px-3 text-base text-rose-800'>
-                    {rulesetsByStatus.get(AmpelStatus.RED)?.length}
-                  </span>
-                </div>
-
-                <div className='grid w-full grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-2'>
-                  {renderAlertCards(AmpelStatus.RED)}
-                </div>
+        <div className='ml-2 flex h-full w-full flex-col gap-y-20 pr-4'>
+          <div className='grid grid-cols-1 gap-12 lg:auto-rows-min lg:grid-cols-2'>
+            <section className='flex w-full flex-col items-start gap-y-4'>
+              <KolHeading
+                _label={`Kritische Zustände (${rulesetsByStatus.get(AmpelStatus.RED)?.length ?? 0})`}
+                _level={2}
+              />
+              <div className='grid w-full grid-cols-1 gap-4 sm:grid-cols-2'>
+                {renderAlertCards(AmpelStatus.RED)}
               </div>
-              <div className='order-2 flex w-full flex-col items-start gap-y-4 lg:col-span-1'>
-                <div className='flex flex-row items-baseline gap-x-4'>
-                  <span className='text-lg text-gray-600'>Warnende Zustände</span>
-                  <span className='rounded-md bg-amber-100 px-3 text-base text-amber-800'>
-                    {rulesetsByStatus.get(AmpelStatus.YELLOW)?.length}
-                  </span>
-                </div>
-
-                <div className='grid w-full grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-2'>
-                  {renderAlertCards(AmpelStatus.YELLOW)}
-                </div>
+            </section>
+            <section className='flex w-full flex-col items-start gap-y-4'>
+              <KolHeading
+                _label={`Warnende Zustände (${rulesetsByStatus.get(AmpelStatus.YELLOW)?.length ?? 0})`}
+                _level={2}
+              />
+              <div className='grid w-full grid-cols-1 gap-4 sm:grid-cols-2'>
+                {renderAlertCards(AmpelStatus.YELLOW)}
               </div>
-            </div>
+            </section>
+          </div>
 
-            <div className='order-3 flex h-full w-full flex-col gap-y-4 pr-4 lg:col-span-2'>
-              <button
-                type='button'
-                className='flex flex-row items-center gap-x-4 text-gray-600 hover:cursor-pointer focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2'
-                onClick={() => setInconspicuousStatesVisible(!inconspicuousStatesVisible)}
-                aria-expanded={inconspicuousStatesVisible}
-                aria-controls='inconspicuous-states-section'
-              >
-                <span className='text-lg'>Unauffällige Zustände</span>
-                <span className='rounded-md bg-gray-100 px-3 text-base text-gray-800'>
-                  {rulesetsByStatus.get(AmpelStatus.GREEN)?.length}
-                </span>
-                {!inconspicuousStatesVisible && (
-                  <svg
-                    xmlns='http://www.w3.org/2000/svg'
-                    viewBox='0 0 16 16'
-                    fill='currentColor'
-                    className='size-4'
-                    aria-hidden='true'
-                  >
-                    <path
-                      fillRule='evenodd'
-                      d='M6.22 4.22a.75.75 0 0 1 1.06 0l3.25 3.25a.75.75 0 0 1 0 1.06l-3.25 3.25a.75.75 0 0 1-1.06-1.06L8.94 8 6.22 5.28a.75.75 0 0 1 0-1.06Z'
-                      clipRule='evenodd'
-                    />
-                  </svg>
-                )}
-                {inconspicuousStatesVisible && (
-                  <svg
-                    xmlns='http://www.w3.org/2000/svg'
-                    viewBox='0 0 16 16'
-                    fill='currentColor'
-                    className='size-4'
-                    aria-hidden='true'
-                  >
-                    <path
-                      fillRule='evenodd'
-                      d='M4.22 6.22a.75.75 0 0 1 1.06 0L8 8.94l2.72-2.72a.75.75 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 7.28a.75.75 0 0 1 0-1.06Z'
-                      clipRule='evenodd'
-                    />
-                  </svg>
-                )}
-              </button>
-
+          <section className='flex w-full flex-col gap-y-4 pr-4'>
+            <KolDetails
+              _label={`Unauffällige Zustände (${rulesetsByStatus.get(AmpelStatus.GREEN)?.length ?? 0})`}
+              _level={2}
+            >
               <div
                 id='inconspicuous-states-section'
-                className={`grid grid-cols-1 gap-4 overflow-hidden sm:grid-cols-2 xl:grid-cols-3 ${
-                  inconspicuousStatesVisible
-                    ? 'visible translate-x-0 opacity-100'
-                    : 'pointer-events-none invisible translate-x-full opacity-0'
-                }`}
+                className='grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3'
               >
                 {renderAlertCards(AmpelStatus.GREEN)}
               </div>
-            </div>
-          </div>
+            </KolDetails>
+          </section>
         </div>
       </div>
     </div>

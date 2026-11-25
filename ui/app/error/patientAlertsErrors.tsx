@@ -4,6 +4,7 @@ import { isRouteErrorResponse, useRouteError } from 'react-router';
 import { BadRequest } from './BadRequest';
 import { DefaultError } from './DefaultError';
 import { Forbidden } from './Forbidden';
+import { LoadingStatus } from './LoadingStatus';
 import { MaintenanceError } from './MaintenanceError';
 import { DEFAULT_NO_DATA_VARIANT, type NoDataVariant } from './noDataVariant';
 import { NotFound } from './NotFound';
@@ -198,20 +199,5 @@ export function SectionErrorPanel({
 }
 
 export function PageSkeleton(): React.ReactNode {
-  return (
-    <>
-      <div
-        data-testid='metadata-skeleton'
-        className='h-12 w-full animate-pulse rounded-md bg-gray-100'
-        aria-busy='true'
-      />
-      <div className='mt-6 space-y-4' aria-busy='true' data-testid='alerts-skeleton'>
-        <div className='h-10 w-1/2 animate-pulse rounded-md bg-gray-100' />
-        <div className='grid grid-cols-1 gap-4 sm:grid-cols-2'>
-          <div className='h-40 animate-pulse rounded-xl bg-rose-100' />
-          <div className='h-40 animate-pulse rounded-xl bg-amber-100' />
-        </div>
-      </div>
-    </>
-  );
+  return <LoadingStatus label='AMPEL-Ergebnisse werden geladen' testId='alerts-skeleton' />;
 }

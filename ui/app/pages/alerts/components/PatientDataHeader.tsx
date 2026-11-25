@@ -1,4 +1,4 @@
-import { BookOpenText, Mail, Phone, Signature } from 'lucide-react';
+import { KolHeading, KolIcon, KolImage, KolLink } from '@public-ui/react-v19';
 import React from 'react';
 import { preload } from 'react-dom';
 
@@ -62,7 +62,6 @@ function HeaderLogoImage({
   className,
   onHidden,
 }: HeaderLogoImageProps): React.ReactNode {
-  const imgRef = React.useRef<HTMLImageElement | null>(null);
   const [resolvedSrc, setResolvedSrc] = React.useState(src || fallbackSrc || '');
   const [isHidden, setIsHidden] = React.useState(!resolvedSrc);
 
@@ -83,19 +82,39 @@ function HeaderLogoImage({
     onHidden?.();
   }, [fallbackSrc, onHidden, resolvedSrc]);
 
-  React.useEffect(() => {
-    const image = imgRef.current;
-    if (!image || isHidden) return;
-
-    if (image.complete && image.naturalWidth === 0) {
-      handleLoadError();
-    }
-  }, [handleLoadError, isHidden]);
-
   if (isHidden || !resolvedSrc) return null;
 
   return (
-    <img ref={imgRef} src={resolvedSrc} alt={alt} className={className} onError={handleLoadError} />
+    <div className={className}>
+      <KolImage _src={resolvedSrc} _alt={alt} _on={{ onError: handleLoadError }} />
+    </div>
+  );
+}
+
+interface LabeledIcon {
+  icon: string;
+  label: string;
+}
+
+const ICONS = {
+  mail: { icon: 'fa-solid fa-envelope', label: 'E-Mail' },
+  manual: { icon: 'fa-solid fa-book-open', label: 'Dokument' },
+  phone: { icon: 'fa-solid fa-phone', label: 'Telefon' },
+  deviceId: { icon: 'fa-solid fa-signature', label: 'Gerätekennung' },
+} satisfies Record<string, LabeledIcon>;
+
+function IconText({
+  icon,
+  children,
+}: {
+  icon: LabeledIcon;
+  children: React.ReactNode;
+}): React.ReactNode {
+  return (
+    <span className='inline-flex items-center gap-2'>
+      <KolIcon _icons={icon.icon} _label={icon.label} />
+      {children}
+    </span>
   );
 }
 
@@ -136,38 +155,37 @@ export function PatientMetaDataHeader({
     setIsClinicLogoVisible(Boolean(resolvedClinicLogoUrl));
   }, [resolvedClinicLogoUrl]);
 
-  const renderExternalLink = (href: string, label: string): React.ReactNode => {
+  const renderExternalLink = (href: string, label: string, icon: LabeledIcon): React.ReactNode => {
     if (!href) {
-      return <span className='whitespace-nowrap text-gray-500'>{label}</span>;
+      return <IconText icon={icon}>{label}</IconText>;
     }
 
     return (
-      <a
-        href={href}
-        target='_blank'
-        rel='noreferrer noopener'
-        className='whitespace-nowrap underline decoration-blue-400 underline-offset-2 hover:text-blue-800'
-      >
-        {label}
-      </a>
+      <KolLink
+        _href={href}
+        _label={label}
+        _target='_blank'
+        _icons={{ left: { icon: icon.icon, label: icon.label } }}
+      />
     );
   };
 
   return (
     <div className='grid grid-cols-1 gap-x-6 gap-y-3 pr-4 md:grid-cols-[1fr_auto] md:items-end md:pr-6'>
       <div className='min-w-0'>
-        <span className='break-words text-xl font-medium text-gray-700 sm:text-2xl md:text-3xl'>
-          {safeFirstname} {safeLastname} (*{dobText} | {sexLetter})
-        </span>
+        <KolHeading
+          _label={`${safeFirstname} ${safeLastname} (*${dobText} | ${sexLetter})`}
+          _level={1}
+        />
 
         <div className='mt-1 flex flex-wrap items-baseline gap-x-10 gap-y-1'>
           <span className='whitespace-nowrap'>
-            <span className='mr-2 text-gray-600'>Patientennummer</span>
-            <span className='text-violet-800'>{safePatientId}</span>
+            <span className='mr-2'>Patientennummer</span>
+            <strong>{safePatientId}</strong>
           </span>
           <span>
-            <span className='mr-2 text-gray-600'>Fallnummer</span>
-            <span className='text-violet-800'>{safeMedicalCaseId}</span>
+            <span className='mr-2'>Fallnummer</span>
+            <strong>{safeMedicalCaseId}</strong>
           </span>
         </div>
       </div>
@@ -190,21 +208,17 @@ export function PatientMetaDataHeader({
           ) : null}
         </div>
 
-        <span className='col-[1] row-[2] flex items-center gap-1 text-sm text-blue-600 sm:text-base'>
-          <Mail className='h-4 w-4 text-gray-600' />
-          {renderExternalLink(ticketLink, 'Störmeldung Medizintechnik')}
+        <span className='col-[1] row-[2] text-sm sm:text-base'>
+          {renderExternalLink(ticketLink, 'Störmeldung Medizintechnik', ICONS.mail)}
         </span>
-        <span className='col-[1] row-[3] flex items-center gap-1 text-sm text-gray-600 sm:text-base'>
-          <Phone className='h-4 w-4' />
-          <span className='whitespace-nowrap'>allg. Fragen : {contactPhoneText}</span>
+        <span className='col-[1] row-[3] text-sm sm:text-base'>
+          <IconText icon={ICONS.phone}>allg. Fragen: {contactPhoneText}</IconText>
         </span>
-        <span className='col-[2] row-[2] flex items-center gap-1 text-sm text-blue-600 sm:text-base'>
-          <BookOpenText className='h-4 w-4 text-gray-600' />
-          {renderExternalLink(instructionsLink, 'Gebrauchsanweisung')}
+        <span className='col-[2] row-[2] text-sm sm:text-base'>
+          {renderExternalLink(instructionsLink, 'Gebrauchsanweisung', ICONS.manual)}
         </span>
-        <span className='col-[2] row-[3] flex items-center gap-1 text-sm text-gray-600 sm:text-base'>
-          <Signature className='h-4 w-4' />
-          <span className='whitespace-nowrap'> MT-Nummer: {mtNumberText}</span>
+        <span className='col-[2] row-[3] text-sm sm:text-base'>
+          <IconText icon={ICONS.deviceId}>MT-Nummer: {mtNumberText}</IconText>
         </span>
       </div>
     </div>
