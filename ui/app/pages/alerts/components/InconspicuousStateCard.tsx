@@ -24,7 +24,10 @@ export function InconspicuousStateCard({
       <KolCard _label={title} _level={3}>
         <div className='flex flex-col gap-3'>
           <span className='text-sm'>
-            festgestellt am: <span className='font-mono'>{formatDeBerlin(creationTime)}</span>
+            festgestellt am:{' '}
+            <time className='font-mono' dateTime={creationTime.toISOString()}>
+              {formatDeBerlin(creationTime)}
+            </time>
           </span>
           {!disabled && (
             <KolButton

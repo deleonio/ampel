@@ -4,6 +4,7 @@ import { RulesetHistory } from '../../types/types';
 import { getAmpelStatusFillColor } from '../utils/history';
 import { AlertChart } from './AlertChart';
 import { AlertTable } from './AlertTable';
+import { formatDeBerlin } from './formatDate';
 import { StatusLegend } from './StatusLegend';
 import { Switcher } from './Switcher';
 
@@ -41,29 +42,37 @@ export function AlertHistory({ history }: AlertHistoryProps): ReactElement {
     setEnabledChart(false);
   }, [history]);
 
+  const first = transformedData[0];
+  const last = transformedData[transformedData.length - 1];
+  const chartDescription = first
+    ? `Verlauf ${first.analyteName} in ${first.unit}, ${transformedData.length} Messwerte vom ${formatDeBerlin(first.date)} bis ${formatDeBerlin(last.date)}. Die Tabelle enthält dieselben Werte.`
+    : '';
+
   return (
-    <>
-      <div className='grid grid-cols-1 items-start gap-6 lg:grid-cols-4 lg:gap-x-12'>
-        <div className='lg:col-span-3'>
-          {enabledChart ? (
-            <AlertChart
-              transformedData={transformedData}
-              height={hasMoreThanOneDataPoint ? historyHeight : 100}
-            />
-          ) : (
-            <AlertTable
-              transformedData={transformedData}
-              height={hasMoreThanOneDataPoint ? historyHeight : 100}
-            />
-          )}
-        </div>
-        <div className='flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between'>
-          <StatusLegend />
-        </div>
-      </div>
+    <div className='flex flex-col gap-4'>
       {hasMoreThanOneDataPoint && (
         <Switcher label='Als Diagramm anzeigen' checked={enabledChart} onChange={setEnabledChart} />
       )}
-    </>
+      {enabledChart ? (
+        <figure className='grid grid-cols-1 items-start gap-6 lg:grid-cols-4 lg:gap-x-12'>
+          <div className='lg:col-span-3'>
+            <AlertChart
+              transformedData={transformedData}
+              height={hasMoreThanOneDataPoint ? historyHeight : 100}
+              title={first ? `Verlauf ${first.analyteName}` : 'Verlauf'}
+              description={chartDescription}
+            />
+          </div>
+          <figcaption>
+            <StatusLegend />
+          </figcaption>
+        </figure>
+      ) : (
+        <AlertTable
+          transformedData={transformedData}
+          height={hasMoreThanOneDataPoint ? historyHeight : 100}
+        />
+      )}
+    </div>
   );
 }

@@ -31,8 +31,8 @@ describe('PatientMetaDataHeader', () => {
       />,
     );
 
-    expect(screen.getByAltText('Header Logo')).toHaveAttribute('src', BrandLogo);
-    expect(screen.queryByAltText('Clinical Logo')).toBeNull();
+    expect(screen.getByAltText('AMPEL')).toHaveAttribute('src', BrandLogo);
+    expect(screen.queryByAltText('Logo der Klinik')).toBeNull();
   });
 
   it('renders the configured primary logo', () => {
@@ -55,9 +55,9 @@ describe('PatientMetaDataHeader', () => {
       />,
     );
 
-    const logo = screen.getByAltText('Header Logo');
+    const logo = screen.getByAltText('AMPEL');
     expect(logo).toHaveAttribute('src', '/runtime-assets/brand-default-logo.svg');
-    expect(screen.getByAltText('Clinical Logo')).toHaveAttribute(
+    expect(screen.getByAltText('Logo der Klinik')).toHaveAttribute(
       'src',
       '/runtime-assets/clinic-logo.svg',
     );
@@ -83,8 +83,8 @@ describe('PatientMetaDataHeader', () => {
       />,
     );
 
-    expect(screen.getByAltText('Header Logo')).toHaveAttribute('src', BrandLogo);
-    expect(screen.getByAltText('Clinical Logo')).toHaveAttribute('src', UklLogo);
+    expect(screen.getByAltText('AMPEL')).toHaveAttribute('src', BrandLogo);
+    expect(screen.getByAltText('Logo der Klinik')).toHaveAttribute('src', UklLogo);
   });
 
   it('falls back to the bundled product logo and hides a failed clinic logo', async () => {
@@ -107,9 +107,9 @@ describe('PatientMetaDataHeader', () => {
       />,
     );
 
-    const productLogo = screen.getByAltText('Header Logo');
-    const clinicLogo = screen.getByAltText('Clinical Logo');
-    const logoRow = productLogo.closest('.col-span-2');
+    const productLogo = screen.getByAltText('AMPEL');
+    const clinicLogo = screen.getByAltText('Logo der Klinik');
+    const logoRow = screen.getByTestId('logo-row');
 
     expect(productLogo).toHaveAttribute('src', '/runtime-assets/missing-brand-default-logo.svg');
     expect(clinicLogo).toHaveAttribute('src', '/runtime-assets/missing-clinic-logo.svg');
@@ -119,7 +119,7 @@ describe('PatientMetaDataHeader', () => {
     fireEvent.error(clinicLogo);
 
     expect(productLogo).toHaveAttribute('src', BrandLogo);
-    await waitFor(() => expect(screen.queryByAltText('Clinical Logo')).toBeNull());
+    await waitFor(() => expect(screen.queryByAltText('Logo der Klinik')).toBeNull());
     expect(logoRow?.className).toContain('justify-end');
   });
 
@@ -143,10 +143,11 @@ describe('PatientMetaDataHeader', () => {
       />,
     );
 
-    const productLogo = screen.getByAltText('Header Logo');
+    const productLogo = screen.getByAltText('AMPEL');
 
     expect(container.firstElementChild?.className).toContain('pr-4');
-    expect(productLogo.closest('.col-span-2')?.className).toContain('justify-end');
+    expect(productLogo).toBeInTheDocument();
+    expect(screen.getByTestId('logo-row')?.className).toContain('justify-end');
   });
 
   it('gives every header icon an accessible label', () => {

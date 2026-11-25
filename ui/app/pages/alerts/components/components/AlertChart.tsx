@@ -24,6 +24,8 @@ interface AlertChartDataPoint {
 interface AlertChartProps {
   transformedData: AlertChartDataPoint[];
   height?: number;
+  title?: string;
+  description?: string;
 }
 
 interface TickProps {
@@ -32,7 +34,12 @@ interface TickProps {
   payload: { value: string | number | Date };
 }
 
-export function AlertChart({ transformedData: data, height }: AlertChartProps): React.ReactNode {
+export function AlertChart({
+  transformedData: data,
+  height,
+  title,
+  description,
+}: AlertChartProps): React.ReactNode {
   const pxPerPoint = 80;
   const minWidth = 700;
   const length = data.length;
@@ -102,7 +109,12 @@ export function AlertChart({ transformedData: data, height }: AlertChartProps): 
               height={height ?? 475}
               className={'overflow-y-hidden'}
             >
-              <ComposedChart data={data} margin={{ top: 30, right: 0, bottom: 0, left: 48 }}>
+              <ComposedChart
+                data={data}
+                margin={{ top: 30, right: 0, bottom: 0, left: 48 }}
+                title={title}
+                desc={description}
+              >
                 <CartesianGrid stroke='#f5f5f5' />
                 <Tooltip
                   formatter={(v) => [`${v} ${first.unit}`, first.analyteName]}

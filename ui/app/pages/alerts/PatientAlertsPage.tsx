@@ -1,5 +1,5 @@
 import { KolDetails, KolDrawer, KolHeading } from '@public-ui/react-v19';
-import React, { ReactNode, useState } from 'react';
+import React, { ReactNode, useRef, useState } from 'react';
 
 import { type PatientHeaderConfig } from '../../patientHeaderConfig';
 import { AlertDetailOverlay } from './components/AlertDetailOverlay';
@@ -29,6 +29,20 @@ export function PatientAlertsPage({
     setDetailOverlayData(null);
   };
 
+  const drawerContentRef = useRef<HTMLDivElement>(null);
+
+  // Beim Öffnen auf den Diagramm-Schalter fokussieren statt auf „Schließen“.
+  // Ohne Verlauf gibt es keinen Schalter; dann bleibt der Standardfokus des Drawers.
+  const focusInitialDrawerControl = (open: boolean): void => {
+    if (!open) return;
+    globalThis.requestAnimationFrame?.(() => {
+      const target = drawerContentRef.current?.querySelector<HTMLElement & { focus(): unknown }>(
+        '[data-drawer-autofocus] kol-input-checkbox',
+      );
+      void target?.focus();
+    });
+  };
+
   function renderAlertCards(status: AmpelStatus): ReactNode[] {
     const nodes = rulesetsByStatus.get(status) || [];
 
@@ -52,6 +66,19 @@ export function PatientAlertsPage({
         onClick: handleClick,
       });
     });
+  }
+
+  function renderAlertList(status: AmpelStatus, emptyText: string, className: string): ReactNode {
+    const cards = renderAlertCards(status);
+    if (cards.length === 0) return <p>{emptyText}</p>;
+
+    return (
+      <ul role='list' className={className}>
+        {cards.map((card, index) => (
+          <li key={React.isValidElement(card) && card.key != null ? card.key : index}>{card}</li>
+        ))}
+      </ul>
+    );
   }
 
   if (!rulesetsByStatus) return null;
@@ -79,17 +106,23 @@ export function PatientAlertsPage({
         )}
 
         <KolDrawer
-          _label={detailOverlayData?.ruleset ?? 'Details'}
+          _label={detailOverlayData ? `Details zu ${detailOverlayData.ruleset}` : 'Details'}
           _level={2}
           _align='right'
           _hasCloser
           _open={Boolean(detailOverlayData)}
-          _on={{ onClose: hideDetailOverlay, onCancel: hideDetailOverlay }}
+          _on={{
+            onClose: hideDetailOverlay,
+            onCancel: hideDetailOverlay,
+            onToggle: focusInitialDrawerControl,
+          }}
           data-testid='alert-detail-overlay-panel'
         >
-          {detailOverlayData && (
-            <AlertDetailOverlay data={detailOverlayData} key={detailOverlayData.ruleset} />
-          )}
+          <div ref={drawerContentRef}>
+            {detailOverlayData && (
+              <AlertDetailOverlay data={detailOverlayData} key={detailOverlayData.ruleset} />
+            )}
+          </div>
         </KolDrawer>
 
         <div className='ml-2 flex h-full w-full flex-col gap-y-20 pr-4'>
@@ -99,18 +132,22 @@ export function PatientAlertsPage({
                 _label={`Kritische Zustände (${rulesetsByStatus.get(AmpelStatus.RED)?.length ?? 0})`}
                 _level={2}
               />
-              <div className='grid w-full grid-cols-1 gap-4 sm:grid-cols-2'>
-                {renderAlertCards(AmpelStatus.RED)}
-              </div>
+              {renderAlertList(
+                AmpelStatus.RED,
+                'Keine kritischen Zustände.',
+                'grid w-full grid-cols-1 gap-4 sm:grid-cols-2',
+              )}
             </section>
             <section className='flex w-full flex-col items-start gap-y-4'>
               <KolHeading
                 _label={`Warnende Zustände (${rulesetsByStatus.get(AmpelStatus.YELLOW)?.length ?? 0})`}
                 _level={2}
               />
-              <div className='grid w-full grid-cols-1 gap-4 sm:grid-cols-2'>
-                {renderAlertCards(AmpelStatus.YELLOW)}
-              </div>
+              {renderAlertList(
+                AmpelStatus.YELLOW,
+                'Keine warnenden Zustände.',
+                'grid w-full grid-cols-1 gap-4 sm:grid-cols-2',
+              )}
             </section>
           </div>
 
@@ -119,11 +156,12 @@ export function PatientAlertsPage({
               _label={`Unauffällige Zustände (${rulesetsByStatus.get(AmpelStatus.GREEN)?.length ?? 0})`}
               _level={2}
             >
-              <div
-                id='inconspicuous-states-section'
-                className='grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3'
-              >
-                {renderAlertCards(AmpelStatus.GREEN)}
+              <div id='inconspicuous-states-section'>
+                {renderAlertList(
+                  AmpelStatus.GREEN,
+                  'Keine unauffälligen Zustände.',
+                  'grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3',
+                )}
               </div>
             </KolDetails>
           </section>

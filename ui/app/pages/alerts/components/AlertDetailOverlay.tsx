@@ -22,7 +22,7 @@ export function AlertDetailOverlay({ data }: OverlayProps): React.ReactNode {
 
   return (
     <div className='flex max-w-[1000px] flex-col gap-y-8'>
-      <AlertHeader type={data.ampelStatus} severity={severity} />
+      <AlertHeader type={data.ampelStatus} severity={severity} resultTime={data.resultTime} />
       <HintMessage message={data.message} />
       <AlertHistory history={data.rulesetHistory} />
     </div>

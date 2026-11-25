@@ -9,7 +9,7 @@ interface SwitcherProps {
 
 export function Switcher({ checked, onChange, label }: SwitcherProps): ReactElement {
   return (
-    <div data-testid='switcher'>
+    <div data-testid='switcher' data-drawer-autofocus>
       <KolInputCheckbox
         _label={label}
         _variant='switch'

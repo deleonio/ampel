@@ -45,7 +45,9 @@ export function AlertCard({
         <div className='flex flex-col gap-3'>
           <div className='flex flex-wrap items-center justify-between gap-2'>
             <KolBadge _label={badge.label} _color={badge.color} />
-            <span className='font-mono text-sm'>{formatRelative(creationTime)}</span>
+            <time className='font-mono text-sm' dateTime={creationTime.toISOString()}>
+              {formatRelative(creationTime)}
+            </time>
           </div>
           {!disabled && (
             <KolButton

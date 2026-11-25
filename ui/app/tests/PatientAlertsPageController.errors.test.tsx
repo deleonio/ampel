@@ -117,7 +117,7 @@ describe('PatientAlertsPageController partial errors', () => {
     expect(
       await screen.findByText(/Keine Patientendaten zur Fallnummer vorhanden/i),
     ).toBeInTheDocument();
-    expect(await screen.findByText(/Unbekannt Unbekannt/i)).toBeInTheDocument();
+    expect(await screen.findByText(/Name unbekannt/i)).toBeInTheDocument();
     expect(await screen.findByText(/kein Geburtsdatum/i)).toBeInTheDocument();
     expect(await screen.findByText('CASE-123')).toBeInTheDocument();
     expect(screen.queryByTestId('alerts-error')).toBeNull();
@@ -189,7 +189,7 @@ describe('PatientAlertsPageController partial errors', () => {
     ).toBeInTheDocument();
     expect(await screen.findByText(/Max Mustermann/i)).toBeInTheDocument();
     expect(await screen.findByText(/P-1/i)).toBeInTheDocument();
-    expect(screen.queryByText(/Unbekannt Unbekannt/i)).toBeNull();
+    expect(screen.queryByText(/Name unbekannt/i)).toBeNull();
     expect(screen.queryByTestId('metadata-error')).toBeNull();
   });
 
