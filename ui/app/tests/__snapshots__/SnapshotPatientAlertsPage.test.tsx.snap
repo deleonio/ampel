@@ -4,14 +4,19 @@ exports[`PatientAlertsPage Integration > displays all main sections & counts (sn
 <body>
   <div>
     <div
-      class="h-full"
+      class="flex flex-col gap-y-4"
     >
       <div
-        class="mb-2 flex flex-wrap items-start gap-2"
+        class="flex flex-wrap items-start gap-2"
       >
         <span>
           TEST
         </span>
+      </div>
+      <div>
+        <h1>
+          AMPEL-Ergebnisse
+        </h1>
       </div>
       <div
         class="grid grid-cols-1 gap-x-6 gap-y-3 pr-4 md:grid-cols-[1fr_auto] md:items-end md:pr-6"
@@ -20,9 +25,9 @@ exports[`PatientAlertsPage Integration > displays all main sections & counts (sn
           class="min-w-0"
         >
           <div>
-            <h1>
+            <h2>
               Max Musterfrau (*30.7.1991 | W)
-            </h1>
+            </h2>
           </div>
           <div
             class="mt-1 flex flex-wrap items-baseline gap-x-10 gap-y-1"
@@ -568,14 +573,19 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
 <body>
   <div>
     <div
-      class="h-full"
+      class="flex flex-col gap-y-4"
     >
       <div
-        class="mb-2 flex flex-wrap items-start gap-2"
+        class="flex flex-wrap items-start gap-2"
       >
         <span>
           TEST
         </span>
+      </div>
+      <div>
+        <h1>
+          AMPEL-Ergebnisse
+        </h1>
       </div>
       <div
         class="grid grid-cols-1 gap-x-6 gap-y-3 pr-4 md:grid-cols-[1fr_auto] md:items-end md:pr-6"
@@ -584,9 +594,9 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
           class="min-w-0"
         >
           <div>
-            <h1>
+            <h2>
               Max Musterfrau (*30.7.1991 | W)
-            </h1>
+            </h2>
           </div>
           <div
             class="mt-1 flex flex-wrap items-baseline gap-x-10 gap-y-1"
@@ -1127,14 +1137,19 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
   </div>
   <div>
     <div
-      class="h-full"
+      class="flex flex-col gap-y-4"
     >
       <div
-        class="mb-2 flex flex-wrap items-start gap-2"
+        class="flex flex-wrap items-start gap-2"
       >
         <span>
           TEST
         </span>
+      </div>
+      <div>
+        <h1>
+          AMPEL-Ergebnisse
+        </h1>
       </div>
       <div
         class="grid grid-cols-1 gap-x-6 gap-y-3 pr-4 md:grid-cols-[1fr_auto] md:items-end md:pr-6"
@@ -1143,9 +1158,9 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
           class="min-w-0"
         >
           <div>
-            <h1>
+            <h2>
               Max Musterfrau (*30.7.1991 | W)
-            </h1>
+            </h2>
           </div>
           <div
             class="mt-1 flex flex-wrap items-baseline gap-x-10 gap-y-1"
@@ -1691,14 +1706,19 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
 <body>
   <div>
     <div
-      class="h-full"
+      class="flex flex-col gap-y-4"
     >
       <div
-        class="mb-2 flex flex-wrap items-start gap-2"
+        class="flex flex-wrap items-start gap-2"
       >
         <span>
           TEST
         </span>
+      </div>
+      <div>
+        <h1>
+          AMPEL-Ergebnisse
+        </h1>
       </div>
       <div
         class="grid grid-cols-1 gap-x-6 gap-y-3 pr-4 md:grid-cols-[1fr_auto] md:items-end md:pr-6"
@@ -1707,9 +1727,9 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
           class="min-w-0"
         >
           <div>
-            <h1>
+            <h2>
               Max Musterfrau (*30.7.1991 | W)
-            </h1>
+            </h2>
           </div>
           <div
             class="mt-1 flex flex-wrap items-baseline gap-x-10 gap-y-1"
@@ -2612,14 +2632,19 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
   </div>
   <div>
     <div
-      class="h-full"
+      class="flex flex-col gap-y-4"
     >
       <div
-        class="mb-2 flex flex-wrap items-start gap-2"
+        class="flex flex-wrap items-start gap-2"
       >
         <span>
           TEST
         </span>
+      </div>
+      <div>
+        <h1>
+          AMPEL-Ergebnisse
+        </h1>
       </div>
       <div
         class="grid grid-cols-1 gap-x-6 gap-y-3 pr-4 md:grid-cols-[1fr_auto] md:items-end md:pr-6"
@@ -2628,9 +2653,9 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
           class="min-w-0"
         >
           <div>
-            <h1>
+            <h2>
               Max Musterfrau (*30.7.1991 | W)
-            </h1>
+            </h2>
           </div>
           <div
             class="mt-1 flex flex-wrap items-baseline gap-x-10 gap-y-1"
@@ -3176,14 +3201,19 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
 <body>
   <div>
     <div
-      class="h-full"
+      class="flex flex-col gap-y-4"
     >
       <div
-        class="mb-2 flex flex-wrap items-start gap-2"
+        class="flex flex-wrap items-start gap-2"
       >
         <span>
           TEST
         </span>
+      </div>
+      <div>
+        <h1>
+          AMPEL-Ergebnisse
+        </h1>
       </div>
       <div
         class="grid grid-cols-1 gap-x-6 gap-y-3 pr-4 md:grid-cols-[1fr_auto] md:items-end md:pr-6"
@@ -3192,9 +3222,9 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
           class="min-w-0"
         >
           <div>
-            <h1>
+            <h2>
               Max Musterfrau (*30.7.1991 | W)
-            </h1>
+            </h2>
           </div>
           <div
             class="mt-1 flex flex-wrap items-baseline gap-x-10 gap-y-1"
@@ -3885,14 +3915,19 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
   </div>
   <div>
     <div
-      class="h-full"
+      class="flex flex-col gap-y-4"
     >
       <div
-        class="mb-2 flex flex-wrap items-start gap-2"
+        class="flex flex-wrap items-start gap-2"
       >
         <span>
           TEST
         </span>
+      </div>
+      <div>
+        <h1>
+          AMPEL-Ergebnisse
+        </h1>
       </div>
       <div
         class="grid grid-cols-1 gap-x-6 gap-y-3 pr-4 md:grid-cols-[1fr_auto] md:items-end md:pr-6"
@@ -3901,9 +3936,9 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
           class="min-w-0"
         >
           <div>
-            <h1>
+            <h2>
               Max Musterfrau (*30.7.1991 | W)
-            </h1>
+            </h2>
           </div>
           <div
             class="mt-1 flex flex-wrap items-baseline gap-x-10 gap-y-1"
@@ -4449,14 +4484,19 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
 <body>
   <div>
     <div
-      class="h-full"
+      class="flex flex-col gap-y-4"
     >
       <div
-        class="mb-2 flex flex-wrap items-start gap-2"
+        class="flex flex-wrap items-start gap-2"
       >
         <span>
           TEST
         </span>
+      </div>
+      <div>
+        <h1>
+          AMPEL-Ergebnisse
+        </h1>
       </div>
       <div
         class="grid grid-cols-1 gap-x-6 gap-y-3 pr-4 md:grid-cols-[1fr_auto] md:items-end md:pr-6"
@@ -4465,9 +4505,9 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
           class="min-w-0"
         >
           <div>
-            <h1>
+            <h2>
               Max Musterfrau (*30.7.1991 | W)
-            </h1>
+            </h2>
           </div>
           <div
             class="mt-1 flex flex-wrap items-baseline gap-x-10 gap-y-1"
@@ -5008,14 +5048,19 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
   </div>
   <div>
     <div
-      class="h-full"
+      class="flex flex-col gap-y-4"
     >
       <div
-        class="mb-2 flex flex-wrap items-start gap-2"
+        class="flex flex-wrap items-start gap-2"
       >
         <span>
           TEST
         </span>
+      </div>
+      <div>
+        <h1>
+          AMPEL-Ergebnisse
+        </h1>
       </div>
       <div
         class="grid grid-cols-1 gap-x-6 gap-y-3 pr-4 md:grid-cols-[1fr_auto] md:items-end md:pr-6"
@@ -5024,9 +5069,9 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
           class="min-w-0"
         >
           <div>
-            <h1>
+            <h2>
               Max Musterfrau (*30.7.1991 | W)
-            </h1>
+            </h2>
           </div>
           <div
             class="mt-1 flex flex-wrap items-baseline gap-x-10 gap-y-1"
@@ -5567,14 +5612,19 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
   </div>
   <div>
     <div
-      class="h-full"
+      class="flex flex-col gap-y-4"
     >
       <div
-        class="mb-2 flex flex-wrap items-start gap-2"
+        class="flex flex-wrap items-start gap-2"
       >
         <span>
           TEST
         </span>
+      </div>
+      <div>
+        <h1>
+          AMPEL-Ergebnisse
+        </h1>
       </div>
       <div
         class="grid grid-cols-1 gap-x-6 gap-y-3 pr-4 md:grid-cols-[1fr_auto] md:items-end md:pr-6"
@@ -5583,9 +5633,9 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
           class="min-w-0"
         >
           <div>
-            <h1>
+            <h2>
               Max Musterfrau (*30.7.1991 | W)
-            </h1>
+            </h2>
           </div>
           <div
             class="mt-1 flex flex-wrap items-baseline gap-x-10 gap-y-1"
@@ -6131,14 +6181,19 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
 <body>
   <div>
     <div
-      class="h-full"
+      class="flex flex-col gap-y-4"
     >
       <div
-        class="mb-2 flex flex-wrap items-start gap-2"
+        class="flex flex-wrap items-start gap-2"
       >
         <span>
           TEST
         </span>
+      </div>
+      <div>
+        <h1>
+          AMPEL-Ergebnisse
+        </h1>
       </div>
       <div
         class="grid grid-cols-1 gap-x-6 gap-y-3 pr-4 md:grid-cols-[1fr_auto] md:items-end md:pr-6"
@@ -6147,9 +6202,9 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
           class="min-w-0"
         >
           <div>
-            <h1>
+            <h2>
               Max Musterfrau (*30.7.1991 | W)
-            </h1>
+            </h2>
           </div>
           <div
             class="mt-1 flex flex-wrap items-baseline gap-x-10 gap-y-1"
@@ -7087,14 +7142,19 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
   </div>
   <div>
     <div
-      class="h-full"
+      class="flex flex-col gap-y-4"
     >
       <div
-        class="mb-2 flex flex-wrap items-start gap-2"
+        class="flex flex-wrap items-start gap-2"
       >
         <span>
           TEST
         </span>
+      </div>
+      <div>
+        <h1>
+          AMPEL-Ergebnisse
+        </h1>
       </div>
       <div
         class="grid grid-cols-1 gap-x-6 gap-y-3 pr-4 md:grid-cols-[1fr_auto] md:items-end md:pr-6"
@@ -7103,9 +7163,9 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
           class="min-w-0"
         >
           <div>
-            <h1>
+            <h2>
               Max Musterfrau (*30.7.1991 | W)
-            </h1>
+            </h2>
           </div>
           <div
             class="mt-1 flex flex-wrap items-baseline gap-x-10 gap-y-1"
@@ -7646,14 +7706,19 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
   </div>
   <div>
     <div
-      class="h-full"
+      class="flex flex-col gap-y-4"
     >
       <div
-        class="mb-2 flex flex-wrap items-start gap-2"
+        class="flex flex-wrap items-start gap-2"
       >
         <span>
           TEST
         </span>
+      </div>
+      <div>
+        <h1>
+          AMPEL-Ergebnisse
+        </h1>
       </div>
       <div
         class="grid grid-cols-1 gap-x-6 gap-y-3 pr-4 md:grid-cols-[1fr_auto] md:items-end md:pr-6"
@@ -7662,9 +7727,9 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
           class="min-w-0"
         >
           <div>
-            <h1>
+            <h2>
               Max Musterfrau (*30.7.1991 | W)
-            </h1>
+            </h2>
           </div>
           <div
             class="mt-1 flex flex-wrap items-baseline gap-x-10 gap-y-1"
@@ -8210,14 +8275,19 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
 <body>
   <div>
     <div
-      class="h-full"
+      class="flex flex-col gap-y-4"
     >
       <div
-        class="mb-2 flex flex-wrap items-start gap-2"
+        class="flex flex-wrap items-start gap-2"
       >
         <span>
           TEST
         </span>
+      </div>
+      <div>
+        <h1>
+          AMPEL-Ergebnisse
+        </h1>
       </div>
       <div
         class="grid grid-cols-1 gap-x-6 gap-y-3 pr-4 md:grid-cols-[1fr_auto] md:items-end md:pr-6"
@@ -8226,9 +8296,9 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
           class="min-w-0"
         >
           <div>
-            <h1>
+            <h2>
               Max Musterfrau (*30.7.1991 | W)
-            </h1>
+            </h2>
           </div>
           <div
             class="mt-1 flex flex-wrap items-baseline gap-x-10 gap-y-1"
@@ -8954,14 +9024,19 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
   </div>
   <div>
     <div
-      class="h-full"
+      class="flex flex-col gap-y-4"
     >
       <div
-        class="mb-2 flex flex-wrap items-start gap-2"
+        class="flex flex-wrap items-start gap-2"
       >
         <span>
           TEST
         </span>
+      </div>
+      <div>
+        <h1>
+          AMPEL-Ergebnisse
+        </h1>
       </div>
       <div
         class="grid grid-cols-1 gap-x-6 gap-y-3 pr-4 md:grid-cols-[1fr_auto] md:items-end md:pr-6"
@@ -8970,9 +9045,9 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
           class="min-w-0"
         >
           <div>
-            <h1>
+            <h2>
               Max Musterfrau (*30.7.1991 | W)
-            </h1>
+            </h2>
           </div>
           <div
             class="mt-1 flex flex-wrap items-baseline gap-x-10 gap-y-1"
@@ -9513,14 +9588,19 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
   </div>
   <div>
     <div
-      class="h-full"
+      class="flex flex-col gap-y-4"
     >
       <div
-        class="mb-2 flex flex-wrap items-start gap-2"
+        class="flex flex-wrap items-start gap-2"
       >
         <span>
           TEST
         </span>
+      </div>
+      <div>
+        <h1>
+          AMPEL-Ergebnisse
+        </h1>
       </div>
       <div
         class="grid grid-cols-1 gap-x-6 gap-y-3 pr-4 md:grid-cols-[1fr_auto] md:items-end md:pr-6"
@@ -9529,9 +9609,9 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
           class="min-w-0"
         >
           <div>
-            <h1>
+            <h2>
               Max Musterfrau (*30.7.1991 | W)
-            </h1>
+            </h2>
           </div>
           <div
             class="mt-1 flex flex-wrap items-baseline gap-x-10 gap-y-1"

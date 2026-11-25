@@ -175,7 +175,7 @@ export function PatientMetaDataHeader({
       <div className='min-w-0'>
         <KolHeading
           _label={`${safeFirstname} ${safeLastname} (*${dobText} | ${sexLetter})`}
-          _level={1}
+          _level={2}
         />
 
         <div className='mt-1 flex flex-wrap items-baseline gap-x-10 gap-y-1'>

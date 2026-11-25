@@ -1,9 +1,10 @@
 /* eslint-disable import/no-default-export */
-import { KolBadge } from '@public-ui/react-v19';
+import { KolBadge, KolHeading } from '@public-ui/react-v19';
 import React, { ReactNode, Suspense, useMemo } from 'react';
 import {
   Await,
   LoaderFunctionArgs,
+  MetaFunction,
   ShouldRevalidateFunctionArgs,
   useLoaderData,
   useNavigation,
@@ -12,6 +13,7 @@ import {
 import { NotFound } from '../../error/NotFound';
 import { normalizeError } from '../../error/patientAlertsData';
 import { ErrorBoundary, PageSkeleton, SectionErrorPanel } from '../../error/patientAlertsErrors';
+import { pageTitle } from '../../pageTitle';
 import { getPatientHeaderConfig, type PatientHeaderConfig } from '../../patientHeaderConfig';
 import { FakeDemoAmpelResultRepository } from '../../tests/DemoFakeAmpelResultRepository';
 import { FakeAmpelResultRepository } from '../../tests/FakeAmpelResultRepository';
@@ -28,6 +30,12 @@ import type { ApiResultCollection, MedicalCaseMetadataApiResult } from './types/
 const isTest = import.meta.env?.VITE_TEST_DATA_VIEW === 'test';
 const isDemo = import.meta.env?.VITE_TEST_DATA_VIEW === 'demo';
 const isDev = import.meta.env?.MODE === 'development';
+const PAGE_HEADING = 'AMPEL-Ergebnisse';
+
+// Fehlerseiten setzen ihren Titel selbst (ErrorLayout), daher hier nur der Normalfall.
+export const meta: MetaFunction = ({ params, error }) =>
+  error ? [] : [{ title: pageTitle(`${PAGE_HEADING} – Fall ${params.case_id ?? ''}`) }];
+
 const ENV_BADGE_COLOR = { backgroundColor: '#fde047', foregroundColor: '#422006' };
 
 type AlertsResultValue = ApiResultCollection | SerializableStatusError;
@@ -263,7 +271,7 @@ function ResolvedPatientAlertsView({
       )}
       {showPatientNotFound ? (
         <div data-testid='metadata-error' className='mt-4'>
-          <NotFound variant='patient' />
+          <NotFound variant='patient' level={2} />
         </div>
       ) : metadataError && !alertsError ? (
         <SectionErrorPanel error={metadataError} dataTestId='metadata-error' variant='patient' />
@@ -295,14 +303,15 @@ export default function PatientAlertsPageController(): React.ReactNode {
   const hasAsyncData = isPromise(alertsResult) || isPromise(metadataResult);
 
   return (
-    <div className='h-full'>
+    <div className='flex flex-col gap-y-4'>
       {(isTest || isDemo || isDev) && (
-        <div className='mb-2 flex flex-wrap items-start gap-2'>
+        <div className='flex flex-wrap items-start gap-2'>
           {isTest && <KolBadge _label='TEST' _color={ENV_BADGE_COLOR} />}
           {isDemo && <KolBadge _label='DEMO 03.11.2025' _color={ENV_BADGE_COLOR} />}
           {isDev && <KolBadge _label='DEV' _color={ENV_BADGE_COLOR} />}
         </div>
       )}
+      <KolHeading _label={PAGE_HEADING} _level={1} />
       {hasAsyncData ? (
         <Suspense fallback={<PageSkeleton />}>
           <Await resolve={alertsResult}>

@@ -44,7 +44,7 @@ describe('patientAlertsErrors', () => {
     render(<>{renderSectionError(err)}</>);
 
     expect(screen.getByTestId('too-many-requests')).toHaveTextContent('2000');
-    expect(tooManyRequestsSpy).toHaveBeenCalledWith({ retryAfterMs: 2000 });
+    expect(tooManyRequestsSpy).toHaveBeenCalledWith({ retryAfterMs: 2000, level: 2 });
   });
 
   it('prefers statusCode and parses RFC date retry-after headers', () => {

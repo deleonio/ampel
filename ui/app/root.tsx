@@ -35,7 +35,6 @@ export default function App(): React.ReactNode {
   return (
     <html lang='de'>
       <head>
-        <title>AMPEL-CDSS</title>
         <Links />
         <meta charSet='utf-8' />
         <meta name='viewport' content='width=device-width, initial-scale=1' />

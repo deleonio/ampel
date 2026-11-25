@@ -50,7 +50,7 @@ export function PageContent({ caseId, combinedPromise }: CombinedPromise): React
           {metadataError && !alertsError ? (
             metadataNotFound ? (
               <div className='mt-4'>
-                <NotFound variant='patient' />
+                <NotFound variant='patient' level={2} />
               </div>
             ) : (
               <div className='mt-4'>

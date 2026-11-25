@@ -1,7 +1,6 @@
-import { KolHeading } from '@public-ui/react-v19';
 import React from 'react';
 
-import { ErrorLayout } from './ErrorLayout';
+import { ErrorHeadingLevel, ErrorLayout } from './ErrorLayout';
 import {
   DEFAULT_NO_DATA_VARIANT,
   getNoDataErrorHeading,
@@ -10,18 +9,16 @@ import {
 
 export const BadRequest = ({
   variant = DEFAULT_NO_DATA_VARIANT,
+  level = 1,
 }: {
   variant?: NoDataVariant;
+  level?: ErrorHeadingLevel;
 }): React.ReactNode => (
-  <ErrorLayout>
-    <title>AMPEL-CDSS</title>
-    <meta charSet='utf-8' />
-    <KolHeading _label={getNoDataErrorHeading(variant)} _level={1} />
-    <p style={{ maxWidth: '600px', width: 'fit-content', margin: 'auto' }}>
+  <ErrorLayout title={getNoDataErrorHeading(variant)} level={level}>
+    <p>
       Bitte gleichen Sie die Fallnummer mit der Zustandsanzeige im KIS ab. Prüfen Sie, ob zu dieser
       Fallnummer ein Patient geführt wird und ein AMPEL-Ergebnis (grün, gelb oder rot) vorliegt.
       Nehmen sie Kontakt mit uns auf, falls im KIS ein AMPEL-Ergebnis vorliegt.
     </p>
-    <br />
   </ErrorLayout>
 );
