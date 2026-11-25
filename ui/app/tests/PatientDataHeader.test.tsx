@@ -124,7 +124,7 @@ describe('PatientMetaDataHeader', () => {
   });
 
   it('keeps the product logo at the end of the logo row when the clinic logo is missing', () => {
-    const { container } = render(
+    render(
       <PatientMetaDataHeader
         firstname='Max'
         lastname='Mustermann'
@@ -145,7 +145,6 @@ describe('PatientMetaDataHeader', () => {
 
     const productLogo = screen.getByAltText('AMPEL');
 
-    expect(container.firstElementChild?.className).toContain('pr-4');
     expect(productLogo).toBeInTheDocument();
     expect(screen.getByTestId('logo-row')?.className).toContain('justify-end');
   });

@@ -19,7 +19,7 @@ exports[`PatientAlertsPage Integration > displays all main sections & counts (sn
         </h1>
       </div>
       <header
-        class="grid grid-cols-1 gap-x-6 gap-y-3 pr-4 md:grid-cols-[1fr_auto] md:items-end md:pr-6"
+        class="grid grid-cols-1 gap-x-6 gap-y-3 md:grid-cols-[1fr_auto] md:items-end"
       >
         <div
           class="min-w-0"
@@ -155,17 +155,15 @@ exports[`PatientAlertsPage Integration > displays all main sections & counts (sn
           </ul>
         </div>
       </header>
-      <div
-        class="h-full pl-4"
-      >
+      <div>
         <div
-          class="flex h-full w-full flex-col gap-y-10 pt-4"
+          class="flex w-full flex-col gap-y-10 pt-4"
         >
           <div
-            class="ml-2 flex h-full w-full flex-col gap-y-20 pr-4"
+            class="flex w-full flex-col gap-y-12"
           >
             <div
-              class="grid grid-cols-1 gap-12 lg:auto-rows-min lg:grid-cols-2"
+              class="grid grid-cols-1 gap-x-4 gap-y-12 lg:auto-rows-min lg:grid-cols-2"
             >
               <section
                 class="flex w-full flex-col items-start gap-y-4"
@@ -176,14 +174,19 @@ exports[`PatientAlertsPage Integration > displays all main sections & counts (sn
                   </h2>
                 </div>
                 <ul
-                  class="grid w-full grid-cols-1 gap-4 sm:grid-cols-2"
+                  class="grid w-full auto-rows-[minmax(var(--card-height,auto),auto)] gap-4 grid-cols-1 sm:grid-cols-2 2xl:grid-cols-3"
                   role="list"
                 >
-                  <li>
+                  <li
+                    data-card="true"
+                  >
                     <div
+                      class="h-full"
                       data-testid="critical-alert-card"
                     >
-                      <section>
+                      <section
+                        class="block h-full"
+                      >
                         <h3>
                           AKI
                         </h3>
@@ -212,11 +215,16 @@ exports[`PatientAlertsPage Integration > displays all main sections & counts (sn
                       </section>
                     </div>
                   </li>
-                  <li>
+                  <li
+                    data-card="true"
+                  >
                     <div
+                      class="h-full"
                       data-testid="critical-alert-card"
                     >
-                      <section>
+                      <section
+                        class="block h-full"
+                      >
                         <h3>
                           Refeeding Syndrom
                         </h3>
@@ -245,11 +253,16 @@ exports[`PatientAlertsPage Integration > displays all main sections & counts (sn
                       </section>
                     </div>
                   </li>
-                  <li>
+                  <li
+                    data-card="true"
+                  >
                     <div
+                      class="h-full"
                       data-testid="critical-alert-card"
                     >
-                      <section>
+                      <section
+                        class="block h-full"
+                      >
                         <h3>
                           Hyperkalzämie
                         </h3>
@@ -289,14 +302,19 @@ exports[`PatientAlertsPage Integration > displays all main sections & counts (sn
                   </h2>
                 </div>
                 <ul
-                  class="grid w-full grid-cols-1 gap-4 sm:grid-cols-2"
+                  class="grid w-full auto-rows-[minmax(var(--card-height,auto),auto)] gap-4 grid-cols-1 sm:grid-cols-2 2xl:grid-cols-3"
                   role="list"
                 >
-                  <li>
+                  <li
+                    data-card="true"
+                  >
                     <div
+                      class="h-full"
                       data-testid="warning-alert-card"
                     >
-                      <section>
+                      <section
+                        class="block h-full"
+                      >
                         <h3>
                           Anämie
                         </h3>
@@ -329,7 +347,7 @@ exports[`PatientAlertsPage Integration > displays all main sections & counts (sn
               </section>
             </div>
             <section
-              class="flex w-full flex-col gap-y-4 pr-4"
+              class="flex w-full flex-col gap-y-4"
             >
               <div>
                 <h2>
@@ -347,14 +365,19 @@ exports[`PatientAlertsPage Integration > displays all main sections & counts (sn
                     id="inconspicuous-states-section"
                   >
                     <ul
-                      class="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3"
+                      class="grid w-full auto-rows-[minmax(var(--card-height,auto),auto)] gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-6"
                       role="list"
                     >
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Sepsis
                             </h3>
@@ -382,11 +405,16 @@ exports[`PatientAlertsPage Integration > displays all main sections & counts (sn
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Hypokaliämie
                             </h3>
@@ -414,11 +442,16 @@ exports[`PatientAlertsPage Integration > displays all main sections & counts (sn
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Hypocalcämie
                             </h3>
@@ -446,11 +479,16 @@ exports[`PatientAlertsPage Integration > displays all main sections & counts (sn
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Hyponatriämie
                             </h3>
@@ -478,11 +516,16 @@ exports[`PatientAlertsPage Integration > displays all main sections & counts (sn
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Laktatämie
                             </h3>
@@ -510,11 +553,16 @@ exports[`PatientAlertsPage Integration > displays all main sections & counts (sn
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Diabetes mellitus
                             </h3>
@@ -542,11 +590,16 @@ exports[`PatientAlertsPage Integration > displays all main sections & counts (sn
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Fibrinogenmangel
                             </h3>
@@ -574,11 +627,16 @@ exports[`PatientAlertsPage Integration > displays all main sections & counts (sn
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Hyperglykämie
                             </h3>
@@ -606,11 +664,16 @@ exports[`PatientAlertsPage Integration > displays all main sections & counts (sn
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Procalcitonin-Monitoring
                             </h3>
@@ -670,7 +733,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
         </h1>
       </div>
       <header
-        class="grid grid-cols-1 gap-x-6 gap-y-3 pr-4 md:grid-cols-[1fr_auto] md:items-end md:pr-6"
+        class="grid grid-cols-1 gap-x-6 gap-y-3 md:grid-cols-[1fr_auto] md:items-end"
       >
         <div
           class="min-w-0"
@@ -806,17 +869,15 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
           </ul>
         </div>
       </header>
-      <div
-        class="h-full pl-4"
-      >
+      <div>
         <div
-          class="flex h-full w-full flex-col gap-y-10 pt-4"
+          class="flex w-full flex-col gap-y-10 pt-4"
         >
           <div
-            class="ml-2 flex h-full w-full flex-col gap-y-20 pr-4"
+            class="flex w-full flex-col gap-y-12"
           >
             <div
-              class="grid grid-cols-1 gap-12 lg:auto-rows-min lg:grid-cols-2"
+              class="grid grid-cols-1 gap-x-4 gap-y-12 lg:auto-rows-min lg:grid-cols-2"
             >
               <section
                 class="flex w-full flex-col items-start gap-y-4"
@@ -827,14 +888,19 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                   </h2>
                 </div>
                 <ul
-                  class="grid w-full grid-cols-1 gap-4 sm:grid-cols-2"
+                  class="grid w-full auto-rows-[minmax(var(--card-height,auto),auto)] gap-4 grid-cols-1 sm:grid-cols-2 2xl:grid-cols-3"
                   role="list"
                 >
-                  <li>
+                  <li
+                    data-card="true"
+                  >
                     <div
+                      class="h-full"
                       data-testid="critical-alert-card"
                     >
-                      <section>
+                      <section
+                        class="block h-full"
+                      >
                         <h3>
                           AKI
                         </h3>
@@ -863,11 +929,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                       </section>
                     </div>
                   </li>
-                  <li>
+                  <li
+                    data-card="true"
+                  >
                     <div
+                      class="h-full"
                       data-testid="critical-alert-card"
                     >
-                      <section>
+                      <section
+                        class="block h-full"
+                      >
                         <h3>
                           Refeeding Syndrom
                         </h3>
@@ -896,11 +967,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                       </section>
                     </div>
                   </li>
-                  <li>
+                  <li
+                    data-card="true"
+                  >
                     <div
+                      class="h-full"
                       data-testid="critical-alert-card"
                     >
-                      <section>
+                      <section
+                        class="block h-full"
+                      >
                         <h3>
                           Hyperkalzämie
                         </h3>
@@ -940,14 +1016,19 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                   </h2>
                 </div>
                 <ul
-                  class="grid w-full grid-cols-1 gap-4 sm:grid-cols-2"
+                  class="grid w-full auto-rows-[minmax(var(--card-height,auto),auto)] gap-4 grid-cols-1 sm:grid-cols-2 2xl:grid-cols-3"
                   role="list"
                 >
-                  <li>
+                  <li
+                    data-card="true"
+                  >
                     <div
+                      class="h-full"
                       data-testid="warning-alert-card"
                     >
-                      <section>
+                      <section
+                        class="block h-full"
+                      >
                         <h3>
                           Anämie
                         </h3>
@@ -980,7 +1061,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
               </section>
             </div>
             <section
-              class="flex w-full flex-col gap-y-4 pr-4"
+              class="flex w-full flex-col gap-y-4"
             >
               <div>
                 <h2>
@@ -998,14 +1079,19 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                     id="inconspicuous-states-section"
                   >
                     <ul
-                      class="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3"
+                      class="grid w-full auto-rows-[minmax(var(--card-height,auto),auto)] gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-6"
                       role="list"
                     >
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Sepsis
                             </h3>
@@ -1033,11 +1119,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Hypokaliämie
                             </h3>
@@ -1065,11 +1156,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Hypocalcämie
                             </h3>
@@ -1097,11 +1193,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Hyponatriämie
                             </h3>
@@ -1129,11 +1230,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Laktatämie
                             </h3>
@@ -1161,11 +1267,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Diabetes mellitus
                             </h3>
@@ -1193,11 +1304,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Fibrinogenmangel
                             </h3>
@@ -1225,11 +1341,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Hyperglykämie
                             </h3>
@@ -1257,11 +1378,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Procalcitonin-Monitoring
                             </h3>
@@ -1316,7 +1442,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
         </h1>
       </div>
       <header
-        class="grid grid-cols-1 gap-x-6 gap-y-3 pr-4 md:grid-cols-[1fr_auto] md:items-end md:pr-6"
+        class="grid grid-cols-1 gap-x-6 gap-y-3 md:grid-cols-[1fr_auto] md:items-end"
       >
         <div
           class="min-w-0"
@@ -1452,17 +1578,15 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
           </ul>
         </div>
       </header>
-      <div
-        class="h-full pl-4"
-      >
+      <div>
         <div
-          class="flex h-full w-full flex-col gap-y-10 pt-4"
+          class="flex w-full flex-col gap-y-10 pt-4"
         >
           <div
-            class="ml-2 flex h-full w-full flex-col gap-y-20 pr-4"
+            class="flex w-full flex-col gap-y-12"
           >
             <div
-              class="grid grid-cols-1 gap-12 lg:auto-rows-min lg:grid-cols-2"
+              class="grid grid-cols-1 gap-x-4 gap-y-12 lg:auto-rows-min lg:grid-cols-2"
             >
               <section
                 class="flex w-full flex-col items-start gap-y-4"
@@ -1473,14 +1597,19 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                   </h2>
                 </div>
                 <ul
-                  class="grid w-full grid-cols-1 gap-4 sm:grid-cols-2"
+                  class="grid w-full auto-rows-[minmax(var(--card-height,auto),auto)] gap-4 grid-cols-1 sm:grid-cols-2 2xl:grid-cols-3"
                   role="list"
                 >
-                  <li>
+                  <li
+                    data-card="true"
+                  >
                     <div
+                      class="h-full"
                       data-testid="critical-alert-card"
                     >
-                      <section>
+                      <section
+                        class="block h-full"
+                      >
                         <h3>
                           AKI
                         </h3>
@@ -1509,11 +1638,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                       </section>
                     </div>
                   </li>
-                  <li>
+                  <li
+                    data-card="true"
+                  >
                     <div
+                      class="h-full"
                       data-testid="critical-alert-card"
                     >
-                      <section>
+                      <section
+                        class="block h-full"
+                      >
                         <h3>
                           Refeeding Syndrom
                         </h3>
@@ -1542,11 +1676,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                       </section>
                     </div>
                   </li>
-                  <li>
+                  <li
+                    data-card="true"
+                  >
                     <div
+                      class="h-full"
                       data-testid="critical-alert-card"
                     >
-                      <section>
+                      <section
+                        class="block h-full"
+                      >
                         <h3>
                           Hyperkalzämie
                         </h3>
@@ -1586,14 +1725,19 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                   </h2>
                 </div>
                 <ul
-                  class="grid w-full grid-cols-1 gap-4 sm:grid-cols-2"
+                  class="grid w-full auto-rows-[minmax(var(--card-height,auto),auto)] gap-4 grid-cols-1 sm:grid-cols-2 2xl:grid-cols-3"
                   role="list"
                 >
-                  <li>
+                  <li
+                    data-card="true"
+                  >
                     <div
+                      class="h-full"
                       data-testid="warning-alert-card"
                     >
-                      <section>
+                      <section
+                        class="block h-full"
+                      >
                         <h3>
                           Anämie
                         </h3>
@@ -1626,7 +1770,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
               </section>
             </div>
             <section
-              class="flex w-full flex-col gap-y-4 pr-4"
+              class="flex w-full flex-col gap-y-4"
             >
               <div>
                 <h2>
@@ -1644,14 +1788,19 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                     id="inconspicuous-states-section"
                   >
                     <ul
-                      class="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3"
+                      class="grid w-full auto-rows-[minmax(var(--card-height,auto),auto)] gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-6"
                       role="list"
                     >
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Sepsis
                             </h3>
@@ -1679,11 +1828,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Hypokaliämie
                             </h3>
@@ -1711,11 +1865,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Hypocalcämie
                             </h3>
@@ -1743,11 +1902,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Hyponatriämie
                             </h3>
@@ -1775,11 +1939,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Laktatämie
                             </h3>
@@ -1807,11 +1976,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Diabetes mellitus
                             </h3>
@@ -1839,11 +2013,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Fibrinogenmangel
                             </h3>
@@ -1871,11 +2050,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Hyperglykämie
                             </h3>
@@ -1903,11 +2087,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Procalcitonin-Monitoring
                             </h3>
@@ -1967,7 +2156,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
         </h1>
       </div>
       <header
-        class="grid grid-cols-1 gap-x-6 gap-y-3 pr-4 md:grid-cols-[1fr_auto] md:items-end md:pr-6"
+        class="grid grid-cols-1 gap-x-6 gap-y-3 md:grid-cols-[1fr_auto] md:items-end"
       >
         <div
           class="min-w-0"
@@ -2103,11 +2292,9 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
           </ul>
         </div>
       </header>
-      <div
-        class="h-full pl-4"
-      >
+      <div>
         <div
-          class="flex h-full w-full flex-col gap-y-10 pt-4"
+          class="flex w-full flex-col gap-y-10 pt-4"
         >
           <div
             aria-label="Details zu AKI"
@@ -2436,10 +2623,10 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
             </div>
           </div>
           <div
-            class="ml-2 flex h-full w-full flex-col gap-y-20 pr-4"
+            class="flex w-full flex-col gap-y-12"
           >
             <div
-              class="grid grid-cols-1 gap-12 lg:auto-rows-min lg:grid-cols-2"
+              class="grid grid-cols-1 gap-x-4 gap-y-12 lg:auto-rows-min lg:grid-cols-2"
             >
               <section
                 class="flex w-full flex-col items-start gap-y-4"
@@ -2450,14 +2637,19 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                   </h2>
                 </div>
                 <ul
-                  class="grid w-full grid-cols-1 gap-4 sm:grid-cols-2"
+                  class="grid w-full auto-rows-[minmax(var(--card-height,auto),auto)] gap-4 grid-cols-1 sm:grid-cols-2 2xl:grid-cols-3"
                   role="list"
                 >
-                  <li>
+                  <li
+                    data-card="true"
+                  >
                     <div
+                      class="h-full"
                       data-testid="critical-alert-card"
                     >
-                      <section>
+                      <section
+                        class="block h-full"
+                      >
                         <h3>
                           AKI
                         </h3>
@@ -2486,11 +2678,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                       </section>
                     </div>
                   </li>
-                  <li>
+                  <li
+                    data-card="true"
+                  >
                     <div
+                      class="h-full"
                       data-testid="critical-alert-card"
                     >
-                      <section>
+                      <section
+                        class="block h-full"
+                      >
                         <h3>
                           Refeeding Syndrom
                         </h3>
@@ -2519,11 +2716,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                       </section>
                     </div>
                   </li>
-                  <li>
+                  <li
+                    data-card="true"
+                  >
                     <div
+                      class="h-full"
                       data-testid="critical-alert-card"
                     >
-                      <section>
+                      <section
+                        class="block h-full"
+                      >
                         <h3>
                           Hyperkalzämie
                         </h3>
@@ -2563,14 +2765,19 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                   </h2>
                 </div>
                 <ul
-                  class="grid w-full grid-cols-1 gap-4 sm:grid-cols-2"
+                  class="grid w-full auto-rows-[minmax(var(--card-height,auto),auto)] gap-4 grid-cols-1 sm:grid-cols-2 2xl:grid-cols-3"
                   role="list"
                 >
-                  <li>
+                  <li
+                    data-card="true"
+                  >
                     <div
+                      class="h-full"
                       data-testid="warning-alert-card"
                     >
-                      <section>
+                      <section
+                        class="block h-full"
+                      >
                         <h3>
                           Anämie
                         </h3>
@@ -2603,7 +2810,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
               </section>
             </div>
             <section
-              class="flex w-full flex-col gap-y-4 pr-4"
+              class="flex w-full flex-col gap-y-4"
             >
               <div>
                 <h2>
@@ -2621,14 +2828,19 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                     id="inconspicuous-states-section"
                   >
                     <ul
-                      class="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3"
+                      class="grid w-full auto-rows-[minmax(var(--card-height,auto),auto)] gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-6"
                       role="list"
                     >
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Sepsis
                             </h3>
@@ -2656,11 +2868,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Hypokaliämie
                             </h3>
@@ -2688,11 +2905,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Hypocalcämie
                             </h3>
@@ -2720,11 +2942,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Hyponatriämie
                             </h3>
@@ -2752,11 +2979,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Laktatämie
                             </h3>
@@ -2784,11 +3016,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Diabetes mellitus
                             </h3>
@@ -2816,11 +3053,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Fibrinogenmangel
                             </h3>
@@ -2848,11 +3090,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Hyperglykämie
                             </h3>
@@ -2880,11 +3127,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Procalcitonin-Monitoring
                             </h3>
@@ -2939,7 +3191,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
         </h1>
       </div>
       <header
-        class="grid grid-cols-1 gap-x-6 gap-y-3 pr-4 md:grid-cols-[1fr_auto] md:items-end md:pr-6"
+        class="grid grid-cols-1 gap-x-6 gap-y-3 md:grid-cols-[1fr_auto] md:items-end"
       >
         <div
           class="min-w-0"
@@ -3075,17 +3327,15 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
           </ul>
         </div>
       </header>
-      <div
-        class="h-full pl-4"
-      >
+      <div>
         <div
-          class="flex h-full w-full flex-col gap-y-10 pt-4"
+          class="flex w-full flex-col gap-y-10 pt-4"
         >
           <div
-            class="ml-2 flex h-full w-full flex-col gap-y-20 pr-4"
+            class="flex w-full flex-col gap-y-12"
           >
             <div
-              class="grid grid-cols-1 gap-12 lg:auto-rows-min lg:grid-cols-2"
+              class="grid grid-cols-1 gap-x-4 gap-y-12 lg:auto-rows-min lg:grid-cols-2"
             >
               <section
                 class="flex w-full flex-col items-start gap-y-4"
@@ -3096,14 +3346,19 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                   </h2>
                 </div>
                 <ul
-                  class="grid w-full grid-cols-1 gap-4 sm:grid-cols-2"
+                  class="grid w-full auto-rows-[minmax(var(--card-height,auto),auto)] gap-4 grid-cols-1 sm:grid-cols-2 2xl:grid-cols-3"
                   role="list"
                 >
-                  <li>
+                  <li
+                    data-card="true"
+                  >
                     <div
+                      class="h-full"
                       data-testid="critical-alert-card"
                     >
-                      <section>
+                      <section
+                        class="block h-full"
+                      >
                         <h3>
                           AKI
                         </h3>
@@ -3132,11 +3387,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                       </section>
                     </div>
                   </li>
-                  <li>
+                  <li
+                    data-card="true"
+                  >
                     <div
+                      class="h-full"
                       data-testid="critical-alert-card"
                     >
-                      <section>
+                      <section
+                        class="block h-full"
+                      >
                         <h3>
                           Refeeding Syndrom
                         </h3>
@@ -3165,11 +3425,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                       </section>
                     </div>
                   </li>
-                  <li>
+                  <li
+                    data-card="true"
+                  >
                     <div
+                      class="h-full"
                       data-testid="critical-alert-card"
                     >
-                      <section>
+                      <section
+                        class="block h-full"
+                      >
                         <h3>
                           Hyperkalzämie
                         </h3>
@@ -3209,14 +3474,19 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                   </h2>
                 </div>
                 <ul
-                  class="grid w-full grid-cols-1 gap-4 sm:grid-cols-2"
+                  class="grid w-full auto-rows-[minmax(var(--card-height,auto),auto)] gap-4 grid-cols-1 sm:grid-cols-2 2xl:grid-cols-3"
                   role="list"
                 >
-                  <li>
+                  <li
+                    data-card="true"
+                  >
                     <div
+                      class="h-full"
                       data-testid="warning-alert-card"
                     >
-                      <section>
+                      <section
+                        class="block h-full"
+                      >
                         <h3>
                           Anämie
                         </h3>
@@ -3249,7 +3519,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
               </section>
             </div>
             <section
-              class="flex w-full flex-col gap-y-4 pr-4"
+              class="flex w-full flex-col gap-y-4"
             >
               <div>
                 <h2>
@@ -3267,14 +3537,19 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                     id="inconspicuous-states-section"
                   >
                     <ul
-                      class="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3"
+                      class="grid w-full auto-rows-[minmax(var(--card-height,auto),auto)] gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-6"
                       role="list"
                     >
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Sepsis
                             </h3>
@@ -3302,11 +3577,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Hypokaliämie
                             </h3>
@@ -3334,11 +3614,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Hypocalcämie
                             </h3>
@@ -3366,11 +3651,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Hyponatriämie
                             </h3>
@@ -3398,11 +3688,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Laktatämie
                             </h3>
@@ -3430,11 +3725,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Diabetes mellitus
                             </h3>
@@ -3462,11 +3762,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Fibrinogenmangel
                             </h3>
@@ -3494,11 +3799,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Hyperglykämie
                             </h3>
@@ -3526,11 +3836,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Procalcitonin-Monitoring
                             </h3>
@@ -3590,7 +3905,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
         </h1>
       </div>
       <header
-        class="grid grid-cols-1 gap-x-6 gap-y-3 pr-4 md:grid-cols-[1fr_auto] md:items-end md:pr-6"
+        class="grid grid-cols-1 gap-x-6 gap-y-3 md:grid-cols-[1fr_auto] md:items-end"
       >
         <div
           class="min-w-0"
@@ -3726,11 +4041,9 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
           </ul>
         </div>
       </header>
-      <div
-        class="h-full pl-4"
-      >
+      <div>
         <div
-          class="flex h-full w-full flex-col gap-y-10 pt-4"
+          class="flex w-full flex-col gap-y-10 pt-4"
         >
           <div
             aria-label="Details zu AKI"
@@ -3927,10 +4240,10 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
             </div>
           </div>
           <div
-            class="ml-2 flex h-full w-full flex-col gap-y-20 pr-4"
+            class="flex w-full flex-col gap-y-12"
           >
             <div
-              class="grid grid-cols-1 gap-12 lg:auto-rows-min lg:grid-cols-2"
+              class="grid grid-cols-1 gap-x-4 gap-y-12 lg:auto-rows-min lg:grid-cols-2"
             >
               <section
                 class="flex w-full flex-col items-start gap-y-4"
@@ -3941,14 +4254,19 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                   </h2>
                 </div>
                 <ul
-                  class="grid w-full grid-cols-1 gap-4 sm:grid-cols-2"
+                  class="grid w-full auto-rows-[minmax(var(--card-height,auto),auto)] gap-4 grid-cols-1 sm:grid-cols-2 2xl:grid-cols-3"
                   role="list"
                 >
-                  <li>
+                  <li
+                    data-card="true"
+                  >
                     <div
+                      class="h-full"
                       data-testid="critical-alert-card"
                     >
-                      <section>
+                      <section
+                        class="block h-full"
+                      >
                         <h3>
                           AKI
                         </h3>
@@ -3977,11 +4295,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                       </section>
                     </div>
                   </li>
-                  <li>
+                  <li
+                    data-card="true"
+                  >
                     <div
+                      class="h-full"
                       data-testid="critical-alert-card"
                     >
-                      <section>
+                      <section
+                        class="block h-full"
+                      >
                         <h3>
                           Refeeding Syndrom
                         </h3>
@@ -4010,11 +4333,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                       </section>
                     </div>
                   </li>
-                  <li>
+                  <li
+                    data-card="true"
+                  >
                     <div
+                      class="h-full"
                       data-testid="critical-alert-card"
                     >
-                      <section>
+                      <section
+                        class="block h-full"
+                      >
                         <h3>
                           Hyperkalzämie
                         </h3>
@@ -4054,14 +4382,19 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                   </h2>
                 </div>
                 <ul
-                  class="grid w-full grid-cols-1 gap-4 sm:grid-cols-2"
+                  class="grid w-full auto-rows-[minmax(var(--card-height,auto),auto)] gap-4 grid-cols-1 sm:grid-cols-2 2xl:grid-cols-3"
                   role="list"
                 >
-                  <li>
+                  <li
+                    data-card="true"
+                  >
                     <div
+                      class="h-full"
                       data-testid="warning-alert-card"
                     >
-                      <section>
+                      <section
+                        class="block h-full"
+                      >
                         <h3>
                           Anämie
                         </h3>
@@ -4094,7 +4427,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
               </section>
             </div>
             <section
-              class="flex w-full flex-col gap-y-4 pr-4"
+              class="flex w-full flex-col gap-y-4"
             >
               <div>
                 <h2>
@@ -4112,14 +4445,19 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                     id="inconspicuous-states-section"
                   >
                     <ul
-                      class="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3"
+                      class="grid w-full auto-rows-[minmax(var(--card-height,auto),auto)] gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-6"
                       role="list"
                     >
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Sepsis
                             </h3>
@@ -4147,11 +4485,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Hypokaliämie
                             </h3>
@@ -4179,11 +4522,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Hypocalcämie
                             </h3>
@@ -4211,11 +4559,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Hyponatriämie
                             </h3>
@@ -4243,11 +4596,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Laktatämie
                             </h3>
@@ -4275,11 +4633,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Diabetes mellitus
                             </h3>
@@ -4307,11 +4670,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Fibrinogenmangel
                             </h3>
@@ -4339,11 +4707,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Hyperglykämie
                             </h3>
@@ -4371,11 +4744,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Procalcitonin-Monitoring
                             </h3>
@@ -4430,7 +4808,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
         </h1>
       </div>
       <header
-        class="grid grid-cols-1 gap-x-6 gap-y-3 pr-4 md:grid-cols-[1fr_auto] md:items-end md:pr-6"
+        class="grid grid-cols-1 gap-x-6 gap-y-3 md:grid-cols-[1fr_auto] md:items-end"
       >
         <div
           class="min-w-0"
@@ -4566,17 +4944,15 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
           </ul>
         </div>
       </header>
-      <div
-        class="h-full pl-4"
-      >
+      <div>
         <div
-          class="flex h-full w-full flex-col gap-y-10 pt-4"
+          class="flex w-full flex-col gap-y-10 pt-4"
         >
           <div
-            class="ml-2 flex h-full w-full flex-col gap-y-20 pr-4"
+            class="flex w-full flex-col gap-y-12"
           >
             <div
-              class="grid grid-cols-1 gap-12 lg:auto-rows-min lg:grid-cols-2"
+              class="grid grid-cols-1 gap-x-4 gap-y-12 lg:auto-rows-min lg:grid-cols-2"
             >
               <section
                 class="flex w-full flex-col items-start gap-y-4"
@@ -4587,14 +4963,19 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                   </h2>
                 </div>
                 <ul
-                  class="grid w-full grid-cols-1 gap-4 sm:grid-cols-2"
+                  class="grid w-full auto-rows-[minmax(var(--card-height,auto),auto)] gap-4 grid-cols-1 sm:grid-cols-2 2xl:grid-cols-3"
                   role="list"
                 >
-                  <li>
+                  <li
+                    data-card="true"
+                  >
                     <div
+                      class="h-full"
                       data-testid="critical-alert-card"
                     >
-                      <section>
+                      <section
+                        class="block h-full"
+                      >
                         <h3>
                           AKI
                         </h3>
@@ -4623,11 +5004,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                       </section>
                     </div>
                   </li>
-                  <li>
+                  <li
+                    data-card="true"
+                  >
                     <div
+                      class="h-full"
                       data-testid="critical-alert-card"
                     >
-                      <section>
+                      <section
+                        class="block h-full"
+                      >
                         <h3>
                           Refeeding Syndrom
                         </h3>
@@ -4656,11 +5042,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                       </section>
                     </div>
                   </li>
-                  <li>
+                  <li
+                    data-card="true"
+                  >
                     <div
+                      class="h-full"
                       data-testid="critical-alert-card"
                     >
-                      <section>
+                      <section
+                        class="block h-full"
+                      >
                         <h3>
                           Hyperkalzämie
                         </h3>
@@ -4700,14 +5091,19 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                   </h2>
                 </div>
                 <ul
-                  class="grid w-full grid-cols-1 gap-4 sm:grid-cols-2"
+                  class="grid w-full auto-rows-[minmax(var(--card-height,auto),auto)] gap-4 grid-cols-1 sm:grid-cols-2 2xl:grid-cols-3"
                   role="list"
                 >
-                  <li>
+                  <li
+                    data-card="true"
+                  >
                     <div
+                      class="h-full"
                       data-testid="warning-alert-card"
                     >
-                      <section>
+                      <section
+                        class="block h-full"
+                      >
                         <h3>
                           Anämie
                         </h3>
@@ -4740,7 +5136,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
               </section>
             </div>
             <section
-              class="flex w-full flex-col gap-y-4 pr-4"
+              class="flex w-full flex-col gap-y-4"
             >
               <div>
                 <h2>
@@ -4758,14 +5154,19 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                     id="inconspicuous-states-section"
                   >
                     <ul
-                      class="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3"
+                      class="grid w-full auto-rows-[minmax(var(--card-height,auto),auto)] gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-6"
                       role="list"
                     >
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Sepsis
                             </h3>
@@ -4793,11 +5194,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Hypokaliämie
                             </h3>
@@ -4825,11 +5231,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Hypocalcämie
                             </h3>
@@ -4857,11 +5268,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Hyponatriämie
                             </h3>
@@ -4889,11 +5305,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Laktatämie
                             </h3>
@@ -4921,11 +5342,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Diabetes mellitus
                             </h3>
@@ -4953,11 +5379,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Fibrinogenmangel
                             </h3>
@@ -4985,11 +5416,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Hyperglykämie
                             </h3>
@@ -5017,11 +5453,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of criti
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Procalcitonin-Monitoring
                             </h3>
@@ -5081,7 +5522,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
         </h1>
       </div>
       <header
-        class="grid grid-cols-1 gap-x-6 gap-y-3 pr-4 md:grid-cols-[1fr_auto] md:items-end md:pr-6"
+        class="grid grid-cols-1 gap-x-6 gap-y-3 md:grid-cols-[1fr_auto] md:items-end"
       >
         <div
           class="min-w-0"
@@ -5217,17 +5658,15 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
           </ul>
         </div>
       </header>
-      <div
-        class="h-full pl-4"
-      >
+      <div>
         <div
-          class="flex h-full w-full flex-col gap-y-10 pt-4"
+          class="flex w-full flex-col gap-y-10 pt-4"
         >
           <div
-            class="ml-2 flex h-full w-full flex-col gap-y-20 pr-4"
+            class="flex w-full flex-col gap-y-12"
           >
             <div
-              class="grid grid-cols-1 gap-12 lg:auto-rows-min lg:grid-cols-2"
+              class="grid grid-cols-1 gap-x-4 gap-y-12 lg:auto-rows-min lg:grid-cols-2"
             >
               <section
                 class="flex w-full flex-col items-start gap-y-4"
@@ -5238,14 +5677,19 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                   </h2>
                 </div>
                 <ul
-                  class="grid w-full grid-cols-1 gap-4 sm:grid-cols-2"
+                  class="grid w-full auto-rows-[minmax(var(--card-height,auto),auto)] gap-4 grid-cols-1 sm:grid-cols-2 2xl:grid-cols-3"
                   role="list"
                 >
-                  <li>
+                  <li
+                    data-card="true"
+                  >
                     <div
+                      class="h-full"
                       data-testid="critical-alert-card"
                     >
-                      <section>
+                      <section
+                        class="block h-full"
+                      >
                         <h3>
                           AKI
                         </h3>
@@ -5274,11 +5718,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                       </section>
                     </div>
                   </li>
-                  <li>
+                  <li
+                    data-card="true"
+                  >
                     <div
+                      class="h-full"
                       data-testid="critical-alert-card"
                     >
-                      <section>
+                      <section
+                        class="block h-full"
+                      >
                         <h3>
                           Refeeding Syndrom
                         </h3>
@@ -5307,11 +5756,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                       </section>
                     </div>
                   </li>
-                  <li>
+                  <li
+                    data-card="true"
+                  >
                     <div
+                      class="h-full"
                       data-testid="critical-alert-card"
                     >
-                      <section>
+                      <section
+                        class="block h-full"
+                      >
                         <h3>
                           Hyperkalzämie
                         </h3>
@@ -5351,14 +5805,19 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                   </h2>
                 </div>
                 <ul
-                  class="grid w-full grid-cols-1 gap-4 sm:grid-cols-2"
+                  class="grid w-full auto-rows-[minmax(var(--card-height,auto),auto)] gap-4 grid-cols-1 sm:grid-cols-2 2xl:grid-cols-3"
                   role="list"
                 >
-                  <li>
+                  <li
+                    data-card="true"
+                  >
                     <div
+                      class="h-full"
                       data-testid="warning-alert-card"
                     >
-                      <section>
+                      <section
+                        class="block h-full"
+                      >
                         <h3>
                           Anämie
                         </h3>
@@ -5391,7 +5850,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
               </section>
             </div>
             <section
-              class="flex w-full flex-col gap-y-4 pr-4"
+              class="flex w-full flex-col gap-y-4"
             >
               <div>
                 <h2>
@@ -5409,14 +5868,19 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                     id="inconspicuous-states-section"
                   >
                     <ul
-                      class="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3"
+                      class="grid w-full auto-rows-[minmax(var(--card-height,auto),auto)] gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-6"
                       role="list"
                     >
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Sepsis
                             </h3>
@@ -5444,11 +5908,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Hypokaliämie
                             </h3>
@@ -5476,11 +5945,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Hypocalcämie
                             </h3>
@@ -5508,11 +5982,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Hyponatriämie
                             </h3>
@@ -5540,11 +6019,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Laktatämie
                             </h3>
@@ -5572,11 +6056,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Diabetes mellitus
                             </h3>
@@ -5604,11 +6093,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Fibrinogenmangel
                             </h3>
@@ -5636,11 +6130,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Hyperglykämie
                             </h3>
@@ -5668,11 +6167,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Procalcitonin-Monitoring
                             </h3>
@@ -5727,7 +6231,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
         </h1>
       </div>
       <header
-        class="grid grid-cols-1 gap-x-6 gap-y-3 pr-4 md:grid-cols-[1fr_auto] md:items-end md:pr-6"
+        class="grid grid-cols-1 gap-x-6 gap-y-3 md:grid-cols-[1fr_auto] md:items-end"
       >
         <div
           class="min-w-0"
@@ -5863,17 +6367,15 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
           </ul>
         </div>
       </header>
-      <div
-        class="h-full pl-4"
-      >
+      <div>
         <div
-          class="flex h-full w-full flex-col gap-y-10 pt-4"
+          class="flex w-full flex-col gap-y-10 pt-4"
         >
           <div
-            class="ml-2 flex h-full w-full flex-col gap-y-20 pr-4"
+            class="flex w-full flex-col gap-y-12"
           >
             <div
-              class="grid grid-cols-1 gap-12 lg:auto-rows-min lg:grid-cols-2"
+              class="grid grid-cols-1 gap-x-4 gap-y-12 lg:auto-rows-min lg:grid-cols-2"
             >
               <section
                 class="flex w-full flex-col items-start gap-y-4"
@@ -5884,14 +6386,19 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                   </h2>
                 </div>
                 <ul
-                  class="grid w-full grid-cols-1 gap-4 sm:grid-cols-2"
+                  class="grid w-full auto-rows-[minmax(var(--card-height,auto),auto)] gap-4 grid-cols-1 sm:grid-cols-2 2xl:grid-cols-3"
                   role="list"
                 >
-                  <li>
+                  <li
+                    data-card="true"
+                  >
                     <div
+                      class="h-full"
                       data-testid="critical-alert-card"
                     >
-                      <section>
+                      <section
+                        class="block h-full"
+                      >
                         <h3>
                           AKI
                         </h3>
@@ -5920,11 +6427,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                       </section>
                     </div>
                   </li>
-                  <li>
+                  <li
+                    data-card="true"
+                  >
                     <div
+                      class="h-full"
                       data-testid="critical-alert-card"
                     >
-                      <section>
+                      <section
+                        class="block h-full"
+                      >
                         <h3>
                           Refeeding Syndrom
                         </h3>
@@ -5953,11 +6465,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                       </section>
                     </div>
                   </li>
-                  <li>
+                  <li
+                    data-card="true"
+                  >
                     <div
+                      class="h-full"
                       data-testid="critical-alert-card"
                     >
-                      <section>
+                      <section
+                        class="block h-full"
+                      >
                         <h3>
                           Hyperkalzämie
                         </h3>
@@ -5997,14 +6514,19 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                   </h2>
                 </div>
                 <ul
-                  class="grid w-full grid-cols-1 gap-4 sm:grid-cols-2"
+                  class="grid w-full auto-rows-[minmax(var(--card-height,auto),auto)] gap-4 grid-cols-1 sm:grid-cols-2 2xl:grid-cols-3"
                   role="list"
                 >
-                  <li>
+                  <li
+                    data-card="true"
+                  >
                     <div
+                      class="h-full"
                       data-testid="warning-alert-card"
                     >
-                      <section>
+                      <section
+                        class="block h-full"
+                      >
                         <h3>
                           Anämie
                         </h3>
@@ -6037,7 +6559,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
               </section>
             </div>
             <section
-              class="flex w-full flex-col gap-y-4 pr-4"
+              class="flex w-full flex-col gap-y-4"
             >
               <div>
                 <h2>
@@ -6055,14 +6577,19 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                     id="inconspicuous-states-section"
                   >
                     <ul
-                      class="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3"
+                      class="grid w-full auto-rows-[minmax(var(--card-height,auto),auto)] gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-6"
                       role="list"
                     >
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Sepsis
                             </h3>
@@ -6090,11 +6617,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Hypokaliämie
                             </h3>
@@ -6122,11 +6654,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Hypocalcämie
                             </h3>
@@ -6154,11 +6691,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Hyponatriämie
                             </h3>
@@ -6186,11 +6728,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Laktatämie
                             </h3>
@@ -6218,11 +6765,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Diabetes mellitus
                             </h3>
@@ -6250,11 +6802,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Fibrinogenmangel
                             </h3>
@@ -6282,11 +6839,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Hyperglykämie
                             </h3>
@@ -6314,11 +6876,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Procalcitonin-Monitoring
                             </h3>
@@ -6373,7 +6940,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
         </h1>
       </div>
       <header
-        class="grid grid-cols-1 gap-x-6 gap-y-3 pr-4 md:grid-cols-[1fr_auto] md:items-end md:pr-6"
+        class="grid grid-cols-1 gap-x-6 gap-y-3 md:grid-cols-[1fr_auto] md:items-end"
       >
         <div
           class="min-w-0"
@@ -6509,17 +7076,15 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
           </ul>
         </div>
       </header>
-      <div
-        class="h-full pl-4"
-      >
+      <div>
         <div
-          class="flex h-full w-full flex-col gap-y-10 pt-4"
+          class="flex w-full flex-col gap-y-10 pt-4"
         >
           <div
-            class="ml-2 flex h-full w-full flex-col gap-y-20 pr-4"
+            class="flex w-full flex-col gap-y-12"
           >
             <div
-              class="grid grid-cols-1 gap-12 lg:auto-rows-min lg:grid-cols-2"
+              class="grid grid-cols-1 gap-x-4 gap-y-12 lg:auto-rows-min lg:grid-cols-2"
             >
               <section
                 class="flex w-full flex-col items-start gap-y-4"
@@ -6530,14 +7095,19 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                   </h2>
                 </div>
                 <ul
-                  class="grid w-full grid-cols-1 gap-4 sm:grid-cols-2"
+                  class="grid w-full auto-rows-[minmax(var(--card-height,auto),auto)] gap-4 grid-cols-1 sm:grid-cols-2 2xl:grid-cols-3"
                   role="list"
                 >
-                  <li>
+                  <li
+                    data-card="true"
+                  >
                     <div
+                      class="h-full"
                       data-testid="critical-alert-card"
                     >
-                      <section>
+                      <section
+                        class="block h-full"
+                      >
                         <h3>
                           AKI
                         </h3>
@@ -6566,11 +7136,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                       </section>
                     </div>
                   </li>
-                  <li>
+                  <li
+                    data-card="true"
+                  >
                     <div
+                      class="h-full"
                       data-testid="critical-alert-card"
                     >
-                      <section>
+                      <section
+                        class="block h-full"
+                      >
                         <h3>
                           Refeeding Syndrom
                         </h3>
@@ -6599,11 +7174,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                       </section>
                     </div>
                   </li>
-                  <li>
+                  <li
+                    data-card="true"
+                  >
                     <div
+                      class="h-full"
                       data-testid="critical-alert-card"
                     >
-                      <section>
+                      <section
+                        class="block h-full"
+                      >
                         <h3>
                           Hyperkalzämie
                         </h3>
@@ -6643,14 +7223,19 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                   </h2>
                 </div>
                 <ul
-                  class="grid w-full grid-cols-1 gap-4 sm:grid-cols-2"
+                  class="grid w-full auto-rows-[minmax(var(--card-height,auto),auto)] gap-4 grid-cols-1 sm:grid-cols-2 2xl:grid-cols-3"
                   role="list"
                 >
-                  <li>
+                  <li
+                    data-card="true"
+                  >
                     <div
+                      class="h-full"
                       data-testid="warning-alert-card"
                     >
-                      <section>
+                      <section
+                        class="block h-full"
+                      >
                         <h3>
                           Anämie
                         </h3>
@@ -6683,7 +7268,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
               </section>
             </div>
             <section
-              class="flex w-full flex-col gap-y-4 pr-4"
+              class="flex w-full flex-col gap-y-4"
             >
               <div>
                 <h2>
@@ -6701,14 +7286,19 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                     id="inconspicuous-states-section"
                   >
                     <ul
-                      class="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3"
+                      class="grid w-full auto-rows-[minmax(var(--card-height,auto),auto)] gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-6"
                       role="list"
                     >
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Sepsis
                             </h3>
@@ -6736,11 +7326,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Hypokaliämie
                             </h3>
@@ -6768,11 +7363,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Hypocalcämie
                             </h3>
@@ -6800,11 +7400,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Hyponatriämie
                             </h3>
@@ -6832,11 +7437,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Laktatämie
                             </h3>
@@ -6864,11 +7474,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Diabetes mellitus
                             </h3>
@@ -6896,11 +7511,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Fibrinogenmangel
                             </h3>
@@ -6928,11 +7548,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Hyperglykämie
                             </h3>
@@ -6960,11 +7585,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Procalcitonin-Monitoring
                             </h3>
@@ -7024,7 +7654,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
         </h1>
       </div>
       <header
-        class="grid grid-cols-1 gap-x-6 gap-y-3 pr-4 md:grid-cols-[1fr_auto] md:items-end md:pr-6"
+        class="grid grid-cols-1 gap-x-6 gap-y-3 md:grid-cols-[1fr_auto] md:items-end"
       >
         <div
           class="min-w-0"
@@ -7160,11 +7790,9 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
           </ul>
         </div>
       </header>
-      <div
-        class="h-full pl-4"
-      >
+      <div>
         <div
-          class="flex h-full w-full flex-col gap-y-10 pt-4"
+          class="flex w-full flex-col gap-y-10 pt-4"
         >
           <div
             aria-label="Details zu Anämie"
@@ -7528,10 +8156,10 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
             </div>
           </div>
           <div
-            class="ml-2 flex h-full w-full flex-col gap-y-20 pr-4"
+            class="flex w-full flex-col gap-y-12"
           >
             <div
-              class="grid grid-cols-1 gap-12 lg:auto-rows-min lg:grid-cols-2"
+              class="grid grid-cols-1 gap-x-4 gap-y-12 lg:auto-rows-min lg:grid-cols-2"
             >
               <section
                 class="flex w-full flex-col items-start gap-y-4"
@@ -7542,14 +8170,19 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                   </h2>
                 </div>
                 <ul
-                  class="grid w-full grid-cols-1 gap-4 sm:grid-cols-2"
+                  class="grid w-full auto-rows-[minmax(var(--card-height,auto),auto)] gap-4 grid-cols-1 sm:grid-cols-2 2xl:grid-cols-3"
                   role="list"
                 >
-                  <li>
+                  <li
+                    data-card="true"
+                  >
                     <div
+                      class="h-full"
                       data-testid="critical-alert-card"
                     >
-                      <section>
+                      <section
+                        class="block h-full"
+                      >
                         <h3>
                           AKI
                         </h3>
@@ -7578,11 +8211,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                       </section>
                     </div>
                   </li>
-                  <li>
+                  <li
+                    data-card="true"
+                  >
                     <div
+                      class="h-full"
                       data-testid="critical-alert-card"
                     >
-                      <section>
+                      <section
+                        class="block h-full"
+                      >
                         <h3>
                           Refeeding Syndrom
                         </h3>
@@ -7611,11 +8249,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                       </section>
                     </div>
                   </li>
-                  <li>
+                  <li
+                    data-card="true"
+                  >
                     <div
+                      class="h-full"
                       data-testid="critical-alert-card"
                     >
-                      <section>
+                      <section
+                        class="block h-full"
+                      >
                         <h3>
                           Hyperkalzämie
                         </h3>
@@ -7655,14 +8298,19 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                   </h2>
                 </div>
                 <ul
-                  class="grid w-full grid-cols-1 gap-4 sm:grid-cols-2"
+                  class="grid w-full auto-rows-[minmax(var(--card-height,auto),auto)] gap-4 grid-cols-1 sm:grid-cols-2 2xl:grid-cols-3"
                   role="list"
                 >
-                  <li>
+                  <li
+                    data-card="true"
+                  >
                     <div
+                      class="h-full"
                       data-testid="warning-alert-card"
                     >
-                      <section>
+                      <section
+                        class="block h-full"
+                      >
                         <h3>
                           Anämie
                         </h3>
@@ -7695,7 +8343,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
               </section>
             </div>
             <section
-              class="flex w-full flex-col gap-y-4 pr-4"
+              class="flex w-full flex-col gap-y-4"
             >
               <div>
                 <h2>
@@ -7713,14 +8361,19 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                     id="inconspicuous-states-section"
                   >
                     <ul
-                      class="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3"
+                      class="grid w-full auto-rows-[minmax(var(--card-height,auto),auto)] gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-6"
                       role="list"
                     >
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Sepsis
                             </h3>
@@ -7748,11 +8401,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Hypokaliämie
                             </h3>
@@ -7780,11 +8438,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Hypocalcämie
                             </h3>
@@ -7812,11 +8475,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Hyponatriämie
                             </h3>
@@ -7844,11 +8512,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Laktatämie
                             </h3>
@@ -7876,11 +8549,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Diabetes mellitus
                             </h3>
@@ -7908,11 +8586,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Fibrinogenmangel
                             </h3>
@@ -7940,11 +8623,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Hyperglykämie
                             </h3>
@@ -7972,11 +8660,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Procalcitonin-Monitoring
                             </h3>
@@ -8031,7 +8724,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
         </h1>
       </div>
       <header
-        class="grid grid-cols-1 gap-x-6 gap-y-3 pr-4 md:grid-cols-[1fr_auto] md:items-end md:pr-6"
+        class="grid grid-cols-1 gap-x-6 gap-y-3 md:grid-cols-[1fr_auto] md:items-end"
       >
         <div
           class="min-w-0"
@@ -8167,17 +8860,15 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
           </ul>
         </div>
       </header>
-      <div
-        class="h-full pl-4"
-      >
+      <div>
         <div
-          class="flex h-full w-full flex-col gap-y-10 pt-4"
+          class="flex w-full flex-col gap-y-10 pt-4"
         >
           <div
-            class="ml-2 flex h-full w-full flex-col gap-y-20 pr-4"
+            class="flex w-full flex-col gap-y-12"
           >
             <div
-              class="grid grid-cols-1 gap-12 lg:auto-rows-min lg:grid-cols-2"
+              class="grid grid-cols-1 gap-x-4 gap-y-12 lg:auto-rows-min lg:grid-cols-2"
             >
               <section
                 class="flex w-full flex-col items-start gap-y-4"
@@ -8188,14 +8879,19 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                   </h2>
                 </div>
                 <ul
-                  class="grid w-full grid-cols-1 gap-4 sm:grid-cols-2"
+                  class="grid w-full auto-rows-[minmax(var(--card-height,auto),auto)] gap-4 grid-cols-1 sm:grid-cols-2 2xl:grid-cols-3"
                   role="list"
                 >
-                  <li>
+                  <li
+                    data-card="true"
+                  >
                     <div
+                      class="h-full"
                       data-testid="critical-alert-card"
                     >
-                      <section>
+                      <section
+                        class="block h-full"
+                      >
                         <h3>
                           AKI
                         </h3>
@@ -8224,11 +8920,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                       </section>
                     </div>
                   </li>
-                  <li>
+                  <li
+                    data-card="true"
+                  >
                     <div
+                      class="h-full"
                       data-testid="critical-alert-card"
                     >
-                      <section>
+                      <section
+                        class="block h-full"
+                      >
                         <h3>
                           Refeeding Syndrom
                         </h3>
@@ -8257,11 +8958,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                       </section>
                     </div>
                   </li>
-                  <li>
+                  <li
+                    data-card="true"
+                  >
                     <div
+                      class="h-full"
                       data-testid="critical-alert-card"
                     >
-                      <section>
+                      <section
+                        class="block h-full"
+                      >
                         <h3>
                           Hyperkalzämie
                         </h3>
@@ -8301,14 +9007,19 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                   </h2>
                 </div>
                 <ul
-                  class="grid w-full grid-cols-1 gap-4 sm:grid-cols-2"
+                  class="grid w-full auto-rows-[minmax(var(--card-height,auto),auto)] gap-4 grid-cols-1 sm:grid-cols-2 2xl:grid-cols-3"
                   role="list"
                 >
-                  <li>
+                  <li
+                    data-card="true"
+                  >
                     <div
+                      class="h-full"
                       data-testid="warning-alert-card"
                     >
-                      <section>
+                      <section
+                        class="block h-full"
+                      >
                         <h3>
                           Anämie
                         </h3>
@@ -8341,7 +9052,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
               </section>
             </div>
             <section
-              class="flex w-full flex-col gap-y-4 pr-4"
+              class="flex w-full flex-col gap-y-4"
             >
               <div>
                 <h2>
@@ -8359,14 +9070,19 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                     id="inconspicuous-states-section"
                   >
                     <ul
-                      class="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3"
+                      class="grid w-full auto-rows-[minmax(var(--card-height,auto),auto)] gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-6"
                       role="list"
                     >
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Sepsis
                             </h3>
@@ -8394,11 +9110,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Hypokaliämie
                             </h3>
@@ -8426,11 +9147,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Hypocalcämie
                             </h3>
@@ -8458,11 +9184,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Hyponatriämie
                             </h3>
@@ -8490,11 +9221,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Laktatämie
                             </h3>
@@ -8522,11 +9258,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Diabetes mellitus
                             </h3>
@@ -8554,11 +9295,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Fibrinogenmangel
                             </h3>
@@ -8586,11 +9332,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Hyperglykämie
                             </h3>
@@ -8618,11 +9369,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Procalcitonin-Monitoring
                             </h3>
@@ -8677,7 +9433,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
         </h1>
       </div>
       <header
-        class="grid grid-cols-1 gap-x-6 gap-y-3 pr-4 md:grid-cols-[1fr_auto] md:items-end md:pr-6"
+        class="grid grid-cols-1 gap-x-6 gap-y-3 md:grid-cols-[1fr_auto] md:items-end"
       >
         <div
           class="min-w-0"
@@ -8813,17 +9569,15 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
           </ul>
         </div>
       </header>
-      <div
-        class="h-full pl-4"
-      >
+      <div>
         <div
-          class="flex h-full w-full flex-col gap-y-10 pt-4"
+          class="flex w-full flex-col gap-y-10 pt-4"
         >
           <div
-            class="ml-2 flex h-full w-full flex-col gap-y-20 pr-4"
+            class="flex w-full flex-col gap-y-12"
           >
             <div
-              class="grid grid-cols-1 gap-12 lg:auto-rows-min lg:grid-cols-2"
+              class="grid grid-cols-1 gap-x-4 gap-y-12 lg:auto-rows-min lg:grid-cols-2"
             >
               <section
                 class="flex w-full flex-col items-start gap-y-4"
@@ -8834,14 +9588,19 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                   </h2>
                 </div>
                 <ul
-                  class="grid w-full grid-cols-1 gap-4 sm:grid-cols-2"
+                  class="grid w-full auto-rows-[minmax(var(--card-height,auto),auto)] gap-4 grid-cols-1 sm:grid-cols-2 2xl:grid-cols-3"
                   role="list"
                 >
-                  <li>
+                  <li
+                    data-card="true"
+                  >
                     <div
+                      class="h-full"
                       data-testid="critical-alert-card"
                     >
-                      <section>
+                      <section
+                        class="block h-full"
+                      >
                         <h3>
                           AKI
                         </h3>
@@ -8870,11 +9629,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                       </section>
                     </div>
                   </li>
-                  <li>
+                  <li
+                    data-card="true"
+                  >
                     <div
+                      class="h-full"
                       data-testid="critical-alert-card"
                     >
-                      <section>
+                      <section
+                        class="block h-full"
+                      >
                         <h3>
                           Refeeding Syndrom
                         </h3>
@@ -8903,11 +9667,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                       </section>
                     </div>
                   </li>
-                  <li>
+                  <li
+                    data-card="true"
+                  >
                     <div
+                      class="h-full"
                       data-testid="critical-alert-card"
                     >
-                      <section>
+                      <section
+                        class="block h-full"
+                      >
                         <h3>
                           Hyperkalzämie
                         </h3>
@@ -8947,14 +9716,19 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                   </h2>
                 </div>
                 <ul
-                  class="grid w-full grid-cols-1 gap-4 sm:grid-cols-2"
+                  class="grid w-full auto-rows-[minmax(var(--card-height,auto),auto)] gap-4 grid-cols-1 sm:grid-cols-2 2xl:grid-cols-3"
                   role="list"
                 >
-                  <li>
+                  <li
+                    data-card="true"
+                  >
                     <div
+                      class="h-full"
                       data-testid="warning-alert-card"
                     >
-                      <section>
+                      <section
+                        class="block h-full"
+                      >
                         <h3>
                           Anämie
                         </h3>
@@ -8987,7 +9761,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
               </section>
             </div>
             <section
-              class="flex w-full flex-col gap-y-4 pr-4"
+              class="flex w-full flex-col gap-y-4"
             >
               <div>
                 <h2>
@@ -9005,14 +9779,19 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                     id="inconspicuous-states-section"
                   >
                     <ul
-                      class="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3"
+                      class="grid w-full auto-rows-[minmax(var(--card-height,auto),auto)] gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-6"
                       role="list"
                     >
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Sepsis
                             </h3>
@@ -9040,11 +9819,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Hypokaliämie
                             </h3>
@@ -9072,11 +9856,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Hypocalcämie
                             </h3>
@@ -9104,11 +9893,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Hyponatriämie
                             </h3>
@@ -9136,11 +9930,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Laktatämie
                             </h3>
@@ -9168,11 +9967,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Diabetes mellitus
                             </h3>
@@ -9200,11 +10004,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Fibrinogenmangel
                             </h3>
@@ -9232,11 +10041,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Hyperglykämie
                             </h3>
@@ -9264,11 +10078,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Procalcitonin-Monitoring
                             </h3>
@@ -9328,7 +10147,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
         </h1>
       </div>
       <header
-        class="grid grid-cols-1 gap-x-6 gap-y-3 pr-4 md:grid-cols-[1fr_auto] md:items-end md:pr-6"
+        class="grid grid-cols-1 gap-x-6 gap-y-3 md:grid-cols-[1fr_auto] md:items-end"
       >
         <div
           class="min-w-0"
@@ -9464,11 +10283,9 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
           </ul>
         </div>
       </header>
-      <div
-        class="h-full pl-4"
-      >
+      <div>
         <div
-          class="flex h-full w-full flex-col gap-y-10 pt-4"
+          class="flex w-full flex-col gap-y-10 pt-4"
         >
           <div
             aria-label="Details zu Anämie"
@@ -9700,10 +10517,10 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
             </div>
           </div>
           <div
-            class="ml-2 flex h-full w-full flex-col gap-y-20 pr-4"
+            class="flex w-full flex-col gap-y-12"
           >
             <div
-              class="grid grid-cols-1 gap-12 lg:auto-rows-min lg:grid-cols-2"
+              class="grid grid-cols-1 gap-x-4 gap-y-12 lg:auto-rows-min lg:grid-cols-2"
             >
               <section
                 class="flex w-full flex-col items-start gap-y-4"
@@ -9714,14 +10531,19 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                   </h2>
                 </div>
                 <ul
-                  class="grid w-full grid-cols-1 gap-4 sm:grid-cols-2"
+                  class="grid w-full auto-rows-[minmax(var(--card-height,auto),auto)] gap-4 grid-cols-1 sm:grid-cols-2 2xl:grid-cols-3"
                   role="list"
                 >
-                  <li>
+                  <li
+                    data-card="true"
+                  >
                     <div
+                      class="h-full"
                       data-testid="critical-alert-card"
                     >
-                      <section>
+                      <section
+                        class="block h-full"
+                      >
                         <h3>
                           AKI
                         </h3>
@@ -9750,11 +10572,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                       </section>
                     </div>
                   </li>
-                  <li>
+                  <li
+                    data-card="true"
+                  >
                     <div
+                      class="h-full"
                       data-testid="critical-alert-card"
                     >
-                      <section>
+                      <section
+                        class="block h-full"
+                      >
                         <h3>
                           Refeeding Syndrom
                         </h3>
@@ -9783,11 +10610,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                       </section>
                     </div>
                   </li>
-                  <li>
+                  <li
+                    data-card="true"
+                  >
                     <div
+                      class="h-full"
                       data-testid="critical-alert-card"
                     >
-                      <section>
+                      <section
+                        class="block h-full"
+                      >
                         <h3>
                           Hyperkalzämie
                         </h3>
@@ -9827,14 +10659,19 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                   </h2>
                 </div>
                 <ul
-                  class="grid w-full grid-cols-1 gap-4 sm:grid-cols-2"
+                  class="grid w-full auto-rows-[minmax(var(--card-height,auto),auto)] gap-4 grid-cols-1 sm:grid-cols-2 2xl:grid-cols-3"
                   role="list"
                 >
-                  <li>
+                  <li
+                    data-card="true"
+                  >
                     <div
+                      class="h-full"
                       data-testid="warning-alert-card"
                     >
-                      <section>
+                      <section
+                        class="block h-full"
+                      >
                         <h3>
                           Anämie
                         </h3>
@@ -9867,7 +10704,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
               </section>
             </div>
             <section
-              class="flex w-full flex-col gap-y-4 pr-4"
+              class="flex w-full flex-col gap-y-4"
             >
               <div>
                 <h2>
@@ -9885,14 +10722,19 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                     id="inconspicuous-states-section"
                   >
                     <ul
-                      class="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3"
+                      class="grid w-full auto-rows-[minmax(var(--card-height,auto),auto)] gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-6"
                       role="list"
                     >
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Sepsis
                             </h3>
@@ -9920,11 +10762,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Hypokaliämie
                             </h3>
@@ -9952,11 +10799,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Hypocalcämie
                             </h3>
@@ -9984,11 +10836,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Hyponatriämie
                             </h3>
@@ -10016,11 +10873,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Laktatämie
                             </h3>
@@ -10048,11 +10910,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Diabetes mellitus
                             </h3>
@@ -10080,11 +10947,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Fibrinogenmangel
                             </h3>
@@ -10112,11 +10984,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Hyperglykämie
                             </h3>
@@ -10144,11 +11021,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Procalcitonin-Monitoring
                             </h3>
@@ -10203,7 +11085,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
         </h1>
       </div>
       <header
-        class="grid grid-cols-1 gap-x-6 gap-y-3 pr-4 md:grid-cols-[1fr_auto] md:items-end md:pr-6"
+        class="grid grid-cols-1 gap-x-6 gap-y-3 md:grid-cols-[1fr_auto] md:items-end"
       >
         <div
           class="min-w-0"
@@ -10339,17 +11221,15 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
           </ul>
         </div>
       </header>
-      <div
-        class="h-full pl-4"
-      >
+      <div>
         <div
-          class="flex h-full w-full flex-col gap-y-10 pt-4"
+          class="flex w-full flex-col gap-y-10 pt-4"
         >
           <div
-            class="ml-2 flex h-full w-full flex-col gap-y-20 pr-4"
+            class="flex w-full flex-col gap-y-12"
           >
             <div
-              class="grid grid-cols-1 gap-12 lg:auto-rows-min lg:grid-cols-2"
+              class="grid grid-cols-1 gap-x-4 gap-y-12 lg:auto-rows-min lg:grid-cols-2"
             >
               <section
                 class="flex w-full flex-col items-start gap-y-4"
@@ -10360,14 +11240,19 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                   </h2>
                 </div>
                 <ul
-                  class="grid w-full grid-cols-1 gap-4 sm:grid-cols-2"
+                  class="grid w-full auto-rows-[minmax(var(--card-height,auto),auto)] gap-4 grid-cols-1 sm:grid-cols-2 2xl:grid-cols-3"
                   role="list"
                 >
-                  <li>
+                  <li
+                    data-card="true"
+                  >
                     <div
+                      class="h-full"
                       data-testid="critical-alert-card"
                     >
-                      <section>
+                      <section
+                        class="block h-full"
+                      >
                         <h3>
                           AKI
                         </h3>
@@ -10396,11 +11281,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                       </section>
                     </div>
                   </li>
-                  <li>
+                  <li
+                    data-card="true"
+                  >
                     <div
+                      class="h-full"
                       data-testid="critical-alert-card"
                     >
-                      <section>
+                      <section
+                        class="block h-full"
+                      >
                         <h3>
                           Refeeding Syndrom
                         </h3>
@@ -10429,11 +11319,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                       </section>
                     </div>
                   </li>
-                  <li>
+                  <li
+                    data-card="true"
+                  >
                     <div
+                      class="h-full"
                       data-testid="critical-alert-card"
                     >
-                      <section>
+                      <section
+                        class="block h-full"
+                      >
                         <h3>
                           Hyperkalzämie
                         </h3>
@@ -10473,14 +11368,19 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                   </h2>
                 </div>
                 <ul
-                  class="grid w-full grid-cols-1 gap-4 sm:grid-cols-2"
+                  class="grid w-full auto-rows-[minmax(var(--card-height,auto),auto)] gap-4 grid-cols-1 sm:grid-cols-2 2xl:grid-cols-3"
                   role="list"
                 >
-                  <li>
+                  <li
+                    data-card="true"
+                  >
                     <div
+                      class="h-full"
                       data-testid="warning-alert-card"
                     >
-                      <section>
+                      <section
+                        class="block h-full"
+                      >
                         <h3>
                           Anämie
                         </h3>
@@ -10513,7 +11413,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
               </section>
             </div>
             <section
-              class="flex w-full flex-col gap-y-4 pr-4"
+              class="flex w-full flex-col gap-y-4"
             >
               <div>
                 <h2>
@@ -10531,14 +11431,19 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                     id="inconspicuous-states-section"
                   >
                     <ul
-                      class="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3"
+                      class="grid w-full auto-rows-[minmax(var(--card-height,auto),auto)] gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-6"
                       role="list"
                     >
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Sepsis
                             </h3>
@@ -10566,11 +11471,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Hypokaliämie
                             </h3>
@@ -10598,11 +11508,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Hypocalcämie
                             </h3>
@@ -10630,11 +11545,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Hyponatriämie
                             </h3>
@@ -10662,11 +11582,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Laktatämie
                             </h3>
@@ -10694,11 +11619,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Diabetes mellitus
                             </h3>
@@ -10726,11 +11656,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Fibrinogenmangel
                             </h3>
@@ -10758,11 +11693,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Hyperglykämie
                             </h3>
@@ -10790,11 +11730,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Procalcitonin-Monitoring
                             </h3>
@@ -10849,7 +11794,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
         </h1>
       </div>
       <header
-        class="grid grid-cols-1 gap-x-6 gap-y-3 pr-4 md:grid-cols-[1fr_auto] md:items-end md:pr-6"
+        class="grid grid-cols-1 gap-x-6 gap-y-3 md:grid-cols-[1fr_auto] md:items-end"
       >
         <div
           class="min-w-0"
@@ -10985,17 +11930,15 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
           </ul>
         </div>
       </header>
-      <div
-        class="h-full pl-4"
-      >
+      <div>
         <div
-          class="flex h-full w-full flex-col gap-y-10 pt-4"
+          class="flex w-full flex-col gap-y-10 pt-4"
         >
           <div
-            class="ml-2 flex h-full w-full flex-col gap-y-20 pr-4"
+            class="flex w-full flex-col gap-y-12"
           >
             <div
-              class="grid grid-cols-1 gap-12 lg:auto-rows-min lg:grid-cols-2"
+              class="grid grid-cols-1 gap-x-4 gap-y-12 lg:auto-rows-min lg:grid-cols-2"
             >
               <section
                 class="flex w-full flex-col items-start gap-y-4"
@@ -11006,14 +11949,19 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                   </h2>
                 </div>
                 <ul
-                  class="grid w-full grid-cols-1 gap-4 sm:grid-cols-2"
+                  class="grid w-full auto-rows-[minmax(var(--card-height,auto),auto)] gap-4 grid-cols-1 sm:grid-cols-2 2xl:grid-cols-3"
                   role="list"
                 >
-                  <li>
+                  <li
+                    data-card="true"
+                  >
                     <div
+                      class="h-full"
                       data-testid="critical-alert-card"
                     >
-                      <section>
+                      <section
+                        class="block h-full"
+                      >
                         <h3>
                           AKI
                         </h3>
@@ -11042,11 +11990,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                       </section>
                     </div>
                   </li>
-                  <li>
+                  <li
+                    data-card="true"
+                  >
                     <div
+                      class="h-full"
                       data-testid="critical-alert-card"
                     >
-                      <section>
+                      <section
+                        class="block h-full"
+                      >
                         <h3>
                           Refeeding Syndrom
                         </h3>
@@ -11075,11 +12028,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                       </section>
                     </div>
                   </li>
-                  <li>
+                  <li
+                    data-card="true"
+                  >
                     <div
+                      class="h-full"
                       data-testid="critical-alert-card"
                     >
-                      <section>
+                      <section
+                        class="block h-full"
+                      >
                         <h3>
                           Hyperkalzämie
                         </h3>
@@ -11119,14 +12077,19 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                   </h2>
                 </div>
                 <ul
-                  class="grid w-full grid-cols-1 gap-4 sm:grid-cols-2"
+                  class="grid w-full auto-rows-[minmax(var(--card-height,auto),auto)] gap-4 grid-cols-1 sm:grid-cols-2 2xl:grid-cols-3"
                   role="list"
                 >
-                  <li>
+                  <li
+                    data-card="true"
+                  >
                     <div
+                      class="h-full"
                       data-testid="warning-alert-card"
                     >
-                      <section>
+                      <section
+                        class="block h-full"
+                      >
                         <h3>
                           Anämie
                         </h3>
@@ -11159,7 +12122,7 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
               </section>
             </div>
             <section
-              class="flex w-full flex-col gap-y-4 pr-4"
+              class="flex w-full flex-col gap-y-4"
             >
               <div>
                 <h2>
@@ -11177,14 +12140,19 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                     id="inconspicuous-states-section"
                   >
                     <ul
-                      class="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3"
+                      class="grid w-full auto-rows-[minmax(var(--card-height,auto),auto)] gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-6"
                       role="list"
                     >
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Sepsis
                             </h3>
@@ -11212,11 +12180,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Hypokaliämie
                             </h3>
@@ -11244,11 +12217,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Hypocalcämie
                             </h3>
@@ -11276,11 +12254,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Hyponatriämie
                             </h3>
@@ -11308,11 +12291,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Laktatämie
                             </h3>
@@ -11340,11 +12328,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Diabetes mellitus
                             </h3>
@@ -11372,11 +12365,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Fibrinogenmangel
                             </h3>
@@ -11404,11 +12402,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Hyperglykämie
                             </h3>
@@ -11436,11 +12439,16 @@ exports[`PatientAlertsPage Integration > opens & closes the detail view of warni
                           </section>
                         </div>
                       </li>
-                      <li>
+                      <li
+                        data-card="true"
+                      >
                         <div
+                          class="h-full"
                           data-testid="inconspicuous-state-card"
                         >
-                          <section>
+                          <section
+                            class="block h-full"
+                          >
                             <h3>
                               Procalcitonin-Monitoring
                             </h3>

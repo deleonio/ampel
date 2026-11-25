@@ -4,7 +4,19 @@ import React, { ReactNode, useRef, useState } from 'react';
 import { type PatientHeaderConfig } from '../../patientHeaderConfig';
 import { AlertDetailOverlay } from './components/AlertDetailOverlay';
 import { PatientMetaDataHeader } from './components/PatientDataHeader';
+import { useEqualCardHeight } from './components/utils/useEqualCardHeight';
 import { AlertDetails, AmpelStatus, MedicalCaseMetadata } from './types/types';
+
+/**
+ * Kartenraster mit einheitlichen Breakpoints. Die Karten teilen sich die Breite gleichmäßig (1fr).
+ * Kritisch/Warnend stehen ab lg nebeneinander und haben dann je halb so viele Spalten wie
+ * „Unauffällig“ (Abschnittsabstand = Kartenabstand). Die unauffälligen Karten sind je Zeile 1.75rem
+ * schmaler, weil KolDetails seinen Inhalt fest einrückt.
+ * Die Zeilenhöhe kommt aus useEqualCardHeight: so hoch wie die höchste Karte der Seite.
+ */
+const CARD_ROWS = 'grid w-full auto-rows-[minmax(var(--card-height,auto),auto)] gap-4';
+const HALF_WIDTH_CARD_GRID = `${CARD_ROWS} grid-cols-1 sm:grid-cols-2 2xl:grid-cols-3`;
+const FULL_WIDTH_CARD_GRID = `${CARD_ROWS} grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-6`;
 
 interface PatientAlertsPageProps {
   medicalCaseMetadata?: MedicalCaseMetadata;
@@ -20,6 +32,8 @@ export function PatientAlertsPage({
   headerConfig,
 }: PatientAlertsPageProps): React.ReactNode {
   const [detailOverlayData, setDetailOverlayData] = useState<AlertDetails | null>(null);
+  const cardsRef = useRef<HTMLDivElement>(null);
+  useEqualCardHeight(cardsRef);
 
   const displayDetailOverlay = (details: AlertDetails): void => {
     setDetailOverlayData(details);
@@ -75,7 +89,9 @@ export function PatientAlertsPage({
     return (
       <ul role='list' className={className}>
         {cards.map((card, index) => (
-          <li key={React.isValidElement(card) && card.key != null ? card.key : index}>{card}</li>
+          <li key={React.isValidElement(card) && card.key != null ? card.key : index} data-card>
+            {card}
+          </li>
         ))}
       </ul>
     );
@@ -85,8 +101,8 @@ export function PatientAlertsPage({
   const hasMetadata = Boolean(medicalCaseMetadata);
 
   return (
-    <div className='h-full pl-4'>
-      <div className='flex h-full w-full flex-col gap-y-10 pt-4'>
+    <div>
+      <div className='flex w-full flex-col gap-y-10 pt-4'>
         {showHeader && hasMetadata && medicalCaseMetadata && (
           <PatientMetaDataHeader
             medicalCaseId={medicalCaseMetadata.id}
@@ -125,18 +141,14 @@ export function PatientAlertsPage({
           </div>
         </KolDrawer>
 
-        <div className='ml-2 flex h-full w-full flex-col gap-y-20 pr-4'>
-          <div className='grid grid-cols-1 gap-12 lg:auto-rows-min lg:grid-cols-2'>
+        <div ref={cardsRef} className='flex w-full flex-col gap-y-12'>
+          <div className='grid grid-cols-1 gap-x-4 gap-y-12 lg:auto-rows-min lg:grid-cols-2'>
             <section className='flex w-full flex-col items-start gap-y-4'>
               <KolHeading
                 _label={`Kritische Zustände (${rulesetsByStatus.get(AmpelStatus.RED)?.length ?? 0})`}
                 _level={2}
               />
-              {renderAlertList(
-                AmpelStatus.RED,
-                'Keine kritischen Zustände.',
-                'grid w-full grid-cols-1 gap-4 sm:grid-cols-2',
-              )}
+              {renderAlertList(AmpelStatus.RED, 'Keine kritischen Zustände.', HALF_WIDTH_CARD_GRID)}
             </section>
             <section className='flex w-full flex-col items-start gap-y-4'>
               <KolHeading
@@ -146,12 +158,12 @@ export function PatientAlertsPage({
               {renderAlertList(
                 AmpelStatus.YELLOW,
                 'Keine warnenden Zustände.',
-                'grid w-full grid-cols-1 gap-4 sm:grid-cols-2',
+                HALF_WIDTH_CARD_GRID,
               )}
             </section>
           </div>
 
-          <section className='flex w-full flex-col gap-y-4 pr-4'>
+          <section className='flex w-full flex-col gap-y-4'>
             <KolDetails
               _label={`Unauffällige Zustände (${rulesetsByStatus.get(AmpelStatus.GREEN)?.length ?? 0})`}
               _level={2}
@@ -160,7 +172,7 @@ export function PatientAlertsPage({
                 {renderAlertList(
                   AmpelStatus.GREEN,
                   'Keine unauffälligen Zustände.',
-                  'grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3',
+                  FULL_WIDTH_CARD_GRID,
                 )}
               </div>
             </KolDetails>

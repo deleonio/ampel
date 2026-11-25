@@ -40,15 +40,13 @@ export default function App(): React.ReactNode {
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <Meta />
       </head>
-      <body className='w-screen overflow-x-hidden'>
-        <div className='flex h-screen w-screen flex-row gap-x-20'>
-          <div className='h-full w-full pl-4 pt-4'>
-            <Suspense fallback={<LoadingStatus label='Inhalte werden geladen' />}>
-              <Outlet />
-              <ScrollRestoration />
-            </Suspense>
-          </div>
-        </div>
+      <body>
+        <main className='px-4 py-4'>
+          <Suspense fallback={<LoadingStatus label='Inhalte werden geladen' />}>
+            <Outlet />
+            <ScrollRestoration />
+          </Suspense>
+        </main>
         <script
           dangerouslySetInnerHTML={{
             __html: getPatientHeaderConfigScript(headerConfig),

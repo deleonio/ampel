@@ -186,7 +186,7 @@ export function PatientMetaDataHeader({
   const phoneHref = toTelHref(contactPhone);
 
   return (
-    <header className='grid grid-cols-1 gap-x-6 gap-y-3 pr-4 md:grid-cols-[1fr_auto] md:items-end md:pr-6'>
+    <header className='grid grid-cols-1 gap-x-6 gap-y-3 md:grid-cols-[1fr_auto] md:items-end'>
       <div className='min-w-0'>
         <KolHeading _label={patientName} _level={2} />
 

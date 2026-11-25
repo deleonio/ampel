@@ -44,10 +44,10 @@ export function AlertTable({ transformedData, height }: AlertTableProps): ReactE
         _headers={{
           horizontal: [
             [
-              { label: 'Messzeitpunkt', key: 'date' },
-              { label: 'Analyt', key: 'analyte' },
-              { label: `Wert (${unit})`, key: 'value', textAlign: 'right' },
-              { label: 'Status', key: 'status', type: 'state' },
+              { label: 'Messzeitpunkt', key: 'date', width: 180 },
+              { label: 'Analyt', key: 'analyte', width: 160 },
+              { label: `Wert (${unit})`, key: 'value', textAlign: 'right', width: 140 },
+              { label: 'Status', key: 'status', type: 'state', width: 130 },
             ],
           ],
         }}

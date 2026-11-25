@@ -40,8 +40,11 @@ export function AlertCard({
   const badge = badgeForAlertType(type);
 
   return (
-    <div data-testid={type === AlertType.Warning ? 'warning-alert-card' : 'critical-alert-card'}>
-      <KolCard _label={title} _level={3}>
+    <div
+      className='h-full'
+      data-testid={type === AlertType.Warning ? 'warning-alert-card' : 'critical-alert-card'}
+    >
+      <KolCard _label={title} _level={3} className='block h-full'>
         <div className='flex flex-col gap-3'>
           <div className='flex flex-wrap items-center justify-between gap-2'>
             <KolBadge _label={badge.label} _color={badge.color} />

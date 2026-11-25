@@ -20,8 +20,8 @@ export function InconspicuousStateCard({
   disabled = false,
 }: InconspicuousStateProps): ReactElement {
   return (
-    <div data-testid='inconspicuous-state-card'>
-      <KolCard _label={title} _level={3}>
+    <div className='h-full' data-testid='inconspicuous-state-card'>
+      <KolCard _label={title} _level={3} className='block h-full'>
         <div className='flex flex-col gap-3'>
           <span className='text-sm'>
             festgestellt am:{' '}
