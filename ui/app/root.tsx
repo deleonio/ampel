@@ -1,3 +1,5 @@
+import fontAwesome from '@fortawesome/fontawesome-free/css/all.min.css?url';
+import kolIcons from '@public-ui/theme-default/assets/kolicons/style.css?url';
 import React, { Suspense } from 'react';
 import { LinksFunction, useLoaderData } from 'react-router';
 import { Links, Meta, Outlet, Scripts, ScrollRestoration } from 'react-router';
@@ -9,7 +11,11 @@ import {
 } from './patientHeaderConfig';
 import styles from './tailwind.css?url';
 
-export const links: LinksFunction = () => [{ rel: 'stylesheet', href: styles }];
+export const links: LinksFunction = () => [
+  { rel: 'stylesheet', href: kolIcons },
+  { rel: 'stylesheet', href: fontAwesome },
+  { rel: 'stylesheet', href: styles },
+];
 
 interface RootLoaderData {
   headerConfig: PatientHeaderConfig;
@@ -31,6 +37,7 @@ export default function App(): React.ReactNode {
         <title>AMPEL-CDSS</title>
         <Links />
         <meta charSet='utf-8' />
+        <meta name='viewport' content='width=device-width, initial-scale=1' />
         <Meta />
       </head>
       <body className='w-screen overflow-x-hidden'>

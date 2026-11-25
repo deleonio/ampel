@@ -3,7 +3,9 @@ import {
   toHaveTextContent,
   toHaveAttribute,
 } from '@testing-library/jest-dom/matchers';
-import { expect } from 'vitest';
+import { expect, vi } from 'vitest';
+
+vi.mock('@public-ui/react-v19', () => import('./kolibriMock'));
 
 class ResizeObserver {
   observe() {}

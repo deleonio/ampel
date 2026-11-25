@@ -67,6 +67,10 @@
   },
   "dependencies": {
     "@faker-js/faker": "^10.1.0",
+    "@fortawesome/fontawesome-free": "6.7.2",
+    "@public-ui/components": "5.0.0-beta.3",
+    "@public-ui/react-v19": "5.0.0-beta.3",
+    "@public-ui/theme-default": "5.0.0-beta.3",
     "@react-router/node": "^7.10.1",
     "@react-router/serve": "^7.10.1",
     "@tailwindcss/postcss": "^4.1.17",
